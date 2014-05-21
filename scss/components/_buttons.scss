@@ -1,0 +1,25 @@
+$buttonColor: $pvPink;
+$buttonBackgroundColor: $pvWhite;
+
+.button {
+	background: $buttonBackgroundColor;
+	text-transform: uppercase;
+	color: $buttonColor;
+	border: 3px solid $buttonColor;
+	padding: 0.5em 0.5em;
+
+	transition: background-color 0.4s ease;
+
+	&:hover {
+		background-color: $pvPink;
+		color: $pvWhite;
+	}
+
+	&:focus {
+		outline: 0;
+	}	
+}
+
+button {
+	@extend .button;
+}

@@ -1,0 +1,84 @@
+/* text colors */
+$h1Color: $pvWhite;
+$h2Color: $pvWhite;
+$h3Color: $pvPink;
+$h4Color: $pvGray;
+$h5Color: $pvGray;
+$p1Color: $pvGray;
+$p2Color: $pvGray;
+$navTextColor: $pvDarkGray;
+
+$h1Size: 3.4375em;
+$h2Size: 3.125em;
+$h3Size: 2.125em;
+$h4Size: 1.625em;
+$h5Size: 1.625em;
+$p1Size: 1.25em;
+$p2Size: 1.0625em;
+$navTextSize: 1.25em;
+
+$helveticaNeue: 'Helvetica Neue', helvetica;
+$helvetica: helvetica, arial;
+
+$headerFontFamily: $helveticaNeue;
+$bodyFontFamily: $helvetica;
+
+@mixin h1 {
+	@include rem(font-size, $h1Size);
+	font-family: $headerFontFamily;
+	font-weight: 200;
+	color: $h1Color;
+}
+
+@mixin h2 {
+	@include rem(font-size, $h2Size);
+	font-family: $headerFontFamily;
+	font-weight: 200;
+	color: $h2Color;
+}
+
+@mixin h3 {
+	@include rem(font-size, $h3Size);
+	font-family: $headerFontFamily;
+	font-weight: 200;
+	color: $h3Color;
+}
+
+@mixin h4 {
+	@include rem(font-size, $h4Size);
+	font-family: $headerFontFamily;
+	font-weight: 400;
+	color: $h4Color;
+}
+
+@mixin h5 {
+	@include rem(font-size, $h5Size);
+	font-family: helvetica, arial;
+	font-weight: 400;
+	color: $h5Color;
+}
+
+@mixin p1 {
+	@include rem(font-size, $p1Size);
+	font-family: helvetica, arial;
+	font-weight: 400;
+	color: $p1Color;
+}
+
+@mixin p2 {
+	@include rem(font-size, $p2Size);
+	font-family: helvetica, arial;
+	font-weight: 400;
+	color: $p2Color;
+}
+
+@mixin navText {
+	@include rem(font-size, $navTextSize);
+	font-family: $helveticaNeue;
+	font-weight: 400;
+}
+
+$base-font-size: 16px;
+@function em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
