@@ -2,14 +2,18 @@
 @import "html-boilerplate";
 
 @import "variables";
+@import "helpers";
 
 @import "rem";
 
 @import "typography";
-@import "grid";
 
 @import "components/buttons";
 @import "components/nav";
+@import "components/arrows";
+@import "components/footer";
+
+@import "vendor/responsive-nav";
 
 @font-face {
 	font-family: 'Helvetica Neue';
@@ -32,13 +36,25 @@
     font-weight: 400;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-size: 100%;
 	font-family: helvetica, arial;
 }
 
 .page-wrap {
+	max-width: 1026px;
+	margin: 0 auto;
 	padding: 0 0.8em 0.8em 0.8em;
+}
+
+@media screen and (min-width: 40em) {
+	.page-wrap {
+		padding: 0;
+	}
 }
 
 .content-wrap {
@@ -57,76 +73,18 @@ a {
  */
 /* 1 */
 img[src*=".svg"] {
-  width: 100%\9; 
+  width: 100%\9;
 }
 /* 2 */
 @media screen and (min-width:0\0) {
-  img[src*=".svg"] {
-    width: 100%; 
-  }
-}
-
-.nav-toggle {
-	@extend .button;
-	text-decoration: none;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100px;
-	text-align: center;
-	display: block;
-}
-
-@media screen and (min-width: 40em) {
-	.nav-toggle {
-		display: none;
+	img[src*=".svg"] {
+		width: 100%;
 	}
 }
 
-.nav-collapse {	
-	ul > li {
-		border: 1px solid $pvDarkGray;
-
-		> a {
-			@include navText;
-			background-color: $pvWhite;			
-			color: $pvDarkGray;
-			text-decoration: none;			
-			text-align: center;
-			display: block;
-
-			&:after {
-				content: " \00bb";
-			}
-		}
-
-		&.active {
-			> a {
-				background-color: $pvDarkGray;
-				color: $pvWhite;
-			}
-		}
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.nav-collapse {
-		float: right;
-
-		ul > li {
-			width: 170px;
-			height: 180px;			
-			float: left;
-			border: none;
-
-			> a {
-				line-height: 180px;
-
-				&:after {
-					content: "";
-				}
-			}			
-		}
-	}
+header {
+	@extend %group;
+	margin-bottom: 20px;
 }
 
 .logo {
@@ -138,6 +96,8 @@ img[src*=".svg"] {
 @media screen and (min-width: 40em) {
 	.logo {
 		float: left;
+		min-width: 190px;
+		max-width: 220px;
 
 		> img {
 			max-width: 220px;
@@ -150,6 +110,22 @@ img[src*=".svg"] {
 		> img {
 			max-width: 220px;
 		}
+	}
+}
+
+.news {
+	h1 {
+		@include h4;
+		margin-top: 0;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.news {
+		width: 38.01169590643275%;
+		float: left;
+		padding: 0 40px;
+		margin-top: 0.67em;
 	}
 }
 
@@ -172,21 +148,96 @@ img[src*=".svg"] {
 	p {
 		@include p2;
 		margin-top: 0;
+		height: 2.6em;
+		overflow-y: hidden;
 	}
 }
 
-.news {
-	h1 {
-		@include h4;
+.video {
+	img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.video {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.video {
+		width: 61.98830409356725%;
+		float: left;
+	}
+}
+
+.image-with-arrow {
+	position: relative;
+
+	.arrow {
+		position: absolute;
+		top: 50%;
+		margin-top: -10px;
+	}
+
+	.arrow.pointing-left {
+		right: 0;
+	}
+
+	> img {
+		width: 100%;
 	}
 }
 
 .product-highlight {
+	@extend %group;
+
 	h1 {
 		@include h4;
 	}
 
 	p {
 		@include p1;
+	}
+
+	.image-with-arrow {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.product-highlight {
+		.text-wrapper {
+			float: left;
+			width: 50%;
+			padding: 15px 32.5px;
+		}
+
+		.image-with-arrow {
+			display: inline-block;
+			width: 50%;
+			float: left;
+		}
+	}
+
+	.product-highlight.alt {
+		.text-wrapper {
+			float: right;
+		}
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.product-highlight {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (min-width: 60em) {
+	.product-highlight {
+		.text-wrapper {
+			padding: 30px 65px;
+		}
 	}
 }

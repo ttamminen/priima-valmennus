@@ -1,0 +1,18 @@
+.arrow {
+	width: 0;
+	height: 0;
+}
+
+.arrow.pointing-right {
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-left: 20px solid white;	
+}
+
+.arrow.pointing-left {
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid transparent;
+	border-right: 20px solid white;	
+}

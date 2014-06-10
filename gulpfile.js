@@ -1,7 +1,5 @@
-// Include gulp
 var gulp = require('gulp'); 
 
-// Include Our Plugins
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -9,6 +7,7 @@ var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
+var fileinclude = require('gulp-file-include');
 
 // for the release
 var htmlmin = require('gulp-htmlmin'); 
@@ -50,9 +49,21 @@ gulp.task('scriptsmin', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
+/*gulp.task('fileinclude', function () {
+    return gulp.src(path.join(paths.templates, '*.tpl.html'))
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+});*/
+
 gulp.task('html', function () {
     return gulp.src('html/*.html')
-        .pipe(gulp.dest('dist'))
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('dist'))        
         .pipe(livereload());
 });
 
@@ -71,6 +82,11 @@ gulp.task('font', function () {
         .pipe(gulp.dest('dist/fonts'));
 });
 
+/*gulp.task('static', function () {
+    return gulp.src('static/**')
+        .pipe
+});*/
+
 gulp.task('image', function () {
     return gulp.src('images/**')
         .pipe(imagemin({
@@ -80,7 +96,9 @@ gulp.task('image', function () {
             { convertPathData: false },
             { removeViewBox: false}
             ],
-            use: [pngcrush()]
+            use: [
+                //pngcrush()
+            ]
         }))
         .pipe(gulp.dest('dist/images'));
 });
@@ -89,7 +107,7 @@ gulp.task('image', function () {
 gulp.task('watch', function() {
     gulp.watch('js/*.js', ['lint', 'scripts']);
     gulp.watch('scss/**', ['sass']);
-    gulp.watch('html/*.html', ['html', 'sass', 'lint', 'scripts']);
+    gulp.watch('html/**', ['html', 'sass', 'lint', 'scripts']);
     gulp.watch('images/**', ['image']);
 });
 
@@ -107,7 +125,9 @@ gulp.task('server', function (next) {
             // For non-existent files output the contents of /index.html page in order to make HTML5 routing work
             var urlPath = url.parse(req.url).pathname;
             if (urlPath === '/') {
-                req.url = '/dist/index.html';
+                req.url = '/dist/index.html';            
+            } else if (urlPath === '/palvelut') {
+                req.url = '/dist/palvelut.html';
             } else if (
                 ['css', 'html', 'ico', 'less', 'js', 'png', 'txt', 'xml'].indexOf(urlPath.split('.').pop()) == -1 &&
                 ['bower_components', 'fonts', 'images', 'src', 'vendor', 'views'].indexOf(urlPath.split('/')[1]) == -1) {

@@ -4,11 +4,12 @@ $buttonBackgroundColor: $pvWhite;
 .button {
 	background: $buttonBackgroundColor;
 	text-transform: uppercase;
+	text-decoration: none;
 	color: $buttonColor;
 	border: 3px solid $buttonColor;
-	padding: 0.5em 0.5em;
-
-	transition: background-color 0.4s ease;
+	padding: 0.5em 0.6em;
+	display: inline-block;
+	transition: background-color 0.4s ease;	
 
 	&:hover {
 		background-color: $pvPink;
