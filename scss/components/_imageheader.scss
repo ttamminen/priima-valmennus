@@ -1,0 +1,13 @@
+.image-title-highlight {
+	position: relative;
+
+	h1 {
+		@include h1;
+		text-transform: uppercase;
+		left: 0;
+	    position:absolute;
+	    text-align:center;
+	    top: 30%;
+	    width: 100%
+	}
+}

@@ -1,0 +1,25 @@
+.logo {
+	> img {
+		max-width: 100%;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.logo {
+		float: left;
+		min-width: 190px;
+		max-width: 220px;
+
+		> img {
+			max-width: 220px;
+		}
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.logo {
+		> img {
+			max-width: 220px;
+		}
+	}
+}

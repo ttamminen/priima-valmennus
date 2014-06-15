@@ -1,81 +1,88 @@
 /* text colors */
-$h1Color: $pvWhite;
-$h2Color: $pvWhite;
-$h3Color: $pvPink;
-$h4Color: $pvGray;
-$h5Color: $pvGray;
-$p1Color: $pvGray;
-$p2Color: $pvGray;
-$navTextColor: $pvDarkGray;
+$text-color: $pv-gray;
+$h1-color: $pv-white;
+$h2-color: $pv-white;
+$h3-color: $pv-pink;
+$h4-color: $pv-gray;
+$h5-color: $pv-gray;
+$p1-color: $pv-gray;
+$p2-color: $pv-gray;
+$nav-text-color: $pv-dark-gray;
 
-$h1Size: 2.75em;//3.4375em;
-$h2Size: 2.5em;//3.125em;
-$h3Size: 1.7em;//2.125em;
-$h4Size: 1.3em;//1.625em;
-$h5Size: 1.3em;//1.625em;
-$p1Size: 1em;//1.25em;
-$p2Size: 0.85em;//1.0625em; 
-$navTextSize: 1em;
+$h1-size: 2.75em;//3.4375em;
+$h2-size: 2.5em;//3.125em;
+$h3-size: 1.7em;//2.125em;
+$h4-size: 1.3em;//1.625em;
+$h5-size: 1.3em;//1.625em;
+$p1-size: 1em;//1.25em;
+$p2-size: 0.85em;//1.0625em; 
+$nav-text-size: 1em;
+$price-info-area-font-size: 1em;
 
-$helveticaNeue: 'Helvetica Neue', helvetica;
+$helvetica-neue: 'Helvetica Neue', helvetica;
 $helvetica: helvetica, arial;
 
-$headerFontFamily: $helveticaNeue;
-$bodyFontFamily: $helvetica;
+$header-font-family: $helvetica-neue;
+$body-font-family: $helvetica;
 
 @mixin h1 {
-	@include rem(font-size, $h1Size);
-	font-family: $headerFontFamily;
+	@include rem(font-size, $h1-size);
+	font-family: $header-font-family;
 	font-weight: 200;
-	color: $h1Color;
+	color: $h1-color;
 }
 
 @mixin h2 {
-	@include rem(font-size, $h2Size);
-	font-family: $headerFontFamily;
+	@include rem(font-size, $h2-size);
+	font-family: $header-font-family;
 	font-weight: 200;
-	color: $h2Color;
+	color: $h2-color;
 }
 
 @mixin h3 {
-	@include rem(font-size, $h3Size);
-	font-family: $headerFontFamily;
+	@include rem(font-size, $h3-size);
+	font-family: $header-font-family;
 	font-weight: 200;
-	color: $h3Color;
+	color: $h3-color;
 }
 
 @mixin h4 {
-	@include rem(font-size, $h4Size);
-	font-family: $headerFontFamily;
+	@include rem(font-size, $h4-size);
+	font-family: $header-font-family;
 	font-weight: 400;
-	color: $h4Color;
+	color: $h4-color;
 }
 
 @mixin h5 {
-	@include rem(font-size, $h5Size);
+	@include rem(font-size, $h5-size);
 	font-family: helvetica, arial;
 	font-weight: 400;
-	color: $h5Color;
+	color: $h5-color;
 }
 
 @mixin p1 {
-	@include rem(font-size, $p1Size);
+	@include rem(font-size, $p1-size);
 	font-family: helvetica, arial;
 	font-weight: 400;
-	color: $p1Color;
+	color: $p1-color;
 }
 
 @mixin p2 {
-	@include rem(font-size, $p2Size);
+	@include rem(font-size, $p2-size);
 	font-family: helvetica, arial;
 	font-weight: 400;
-	color: $p2Color;
+	color: $p2-color;
 }
 
-@mixin navText {
-	@include rem(font-size, $navTextSize);
-	font-family: $helveticaNeue;
+@mixin nav-text {
+	@include rem(font-size, $nav-text-size);
+	font-family: $helvetica-neue;
 	font-weight: 400;
+}
+
+@mixin price-info-area-text {
+	@include rem(font-size, $price-info-area-font-size);
+	color: $pv-white;
 }
 
 $base-font-size: 16px;

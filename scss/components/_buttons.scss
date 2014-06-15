@@ -1,19 +1,19 @@
-$buttonColor: $pvPink;
-$buttonBackgroundColor: $pvWhite;
+$button-color: $pv-pink;
+$button-background-color: $pv-white;
 
 .button {
-	background: $buttonBackgroundColor;
+	background: $button-background-color;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: $buttonColor;
-	border: 3px solid $buttonColor;
+	color: $button-color;
+	border: 3px solid $button-color;
 	padding: 0.5em 0.6em;
 	display: inline-block;
 	transition: background-color 0.4s ease;	
 
 	&:hover {
-		background-color: $pvPink;
-		color: $pvWhite;
+		background-color: $pv-pink;
+		color: $pv-white;
 	}
 
 	&:focus {

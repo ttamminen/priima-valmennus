@@ -1,0 +1,4 @@
+.frontpage-wrapper {
+	@extend %centered-content;
+	max-width: $content-max-width;
+}

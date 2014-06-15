@@ -12,6 +12,12 @@
 @import "components/nav";
 @import "components/arrows";
 @import "components/footer";
+@import "components/logo";
+@import "components/imageheader";
+@import "components/dividers";
+
+@import "pages/frontpage";
+@import "pages/palvelut";
 
 @import "vendor/responsive-nav";
 
@@ -43,11 +49,12 @@
 body {
 	font-size: 100%;
 	font-family: helvetica, arial;
+	color: $text-color;
 }
 
 .page-wrap {
-	max-width: 1026px;
-	margin: 0 auto;
+	@extend %centered-content;
+	max-width: $max-width;
 	padding: 0 0.8em 0.8em 0.8em;
 }
 
@@ -82,35 +89,11 @@ img[src*=".svg"] {
 	}
 }
 
-header {
+header.main {
 	@extend %group;
+	@extend %centered-content;
 	margin-bottom: 20px;
-}
-
-.logo {
-	> img {
-		max-width: 100%;
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.logo {
-		float: left;
-		min-width: 190px;
-		max-width: 220px;
-
-		> img {
-			max-width: 220px;
-		}
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.logo {
-		> img {
-			max-width: 220px;
-		}
-	}
+	max-width: $content-max-width;
 }
 
 .news {
@@ -141,7 +124,7 @@ header {
 
 	span {
 		@include p2;
-		color: $pvPink;
+		color: $pv-pink;
 		text-transform: uppercase;
 	}
 

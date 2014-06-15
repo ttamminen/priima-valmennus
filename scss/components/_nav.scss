@@ -1,94 +1,94 @@
 .nav-toggle {
-  @extend .button;
-  text-decoration: none;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  text-align: center;
-  display: block;
+	@extend .button;
+	text-decoration: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+	text-align: center;
+	display: block;
 }
 
 @media screen and (min-width: 40em) {
-  .nav-toggle {
-    display: none;
-  }
+	.nav-toggle {
+		display: none;
+	}
 }
 
 .nav-collapse {
-  ul > li {
-    > a {
-      @include navText;
-      color: $pvWhite;
-      margin-bottom: 1px;
-      text-decoration: none;
-      text-align: center;
-      display: block;
-    }
+	ul > li {
+		> a {
+			@include nav-text;
+			color: $pv-white;
+			margin-bottom: 1px;
+			text-decoration: none;
+			text-align: center;
+			display: block;
+		}
 
-    &.active {
-      > a {
-        background-color: $pvDarkGray;
-        color: $pvWhite;
-      }
-    }
+		&.active {
+			> a {
+				background-color: $pv-dark-gray;
+				color: $pv-white;
+			}
+		}
 
-    &:hover {
-      > a {
-        transition: background-color 0.5s ease;
-        background-color: lighten($pvPink, 20%);
-      }
-    }
-  }
+		&:hover {
+			> a {
+				transition: background-color 0.5s ease;
+				background-color: lighten($pv-pink, 20%);
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 40em) {
-  .nav-collapse {
-    ul > li {
-      > a {
-        background-color: $pvPink;
-        font-size: 1.5em;
-        line-height: 2em;
-      }
-    }
-  }
+	.nav-collapse {
+		ul > li {
+			> a {
+				background-color: $pv-pink;
+				font-size: 1.5em;
+				line-height: 2em;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 40em) {
-  .nav-collapse {
-    float: right;
+	.nav-collapse {
+		float: right;
 
-    ul > li {
-      width: auto;
-      height: 180px;
-      float: left;
-      border: none;
+		ul > li {
+			width: auto;
+			height: 180px;
+			float: left;
+			border: none;
 
-      > a {
-        @include navText;
-        line-height: 180px;
-        padding: 0 10px;
-        background-color: $pvWhite;
-        color: $pvDarkGray;
-        height: auto;
+			> a {
+				@include nav-text;
+				line-height: 180px;
+				padding: 0 10px;
+				background-color: $pv-white;
+				color: $pv-dark-gray;
+				height: auto;
 
-        &:after {
-          content: "";
-        }
-      }
+				&:after {
+				  content: "";
+				}
+			}
 
-      &:hover {
-        > a {
-          background-color: lighten($pvPink, 20%);
-        }
-      }
-    }
-  }
+			&:hover {
+				> a {
+				  background-color: lighten($pv-pink, 20%);
+				}
+			}
+		}
+	}
 }
 
 @media screen and (min-width: 50em) {
-  .nav-collapse {
-    ul > li {
-      width: 170px;
-    }
-  }
+	.nav-collapse {
+		ul > li {
+			width: 170px;
+		}
+	}
 }

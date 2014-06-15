@@ -1,10 +1,13 @@
-$pvBlue: #cceaf0;
-$pvPink: #d679a0;
-$pvLightestGray: #ebebeb;
-$pvLightGray: #6b6b6b;
-$pvGray: #555;
-$pvDarkGray: #292929;
-$pvWhite: #fff;
+$pv-blue: #cceaf0;
+$pv-pink: #d679a0;
+$pv-lightest-gray: #ebebeb;
+$pv-light-gray: #6b6b6b;
+$pv-gray: #555;
+$pv-dark-gray: #292929;
+$pv-white: #fff;
 
 /* header */
-$headerHeight: 180px;
+$header-height: 180px;
+
+$max-width: 1366px;
+$content-max-width: 1026px;

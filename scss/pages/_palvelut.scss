@@ -1,0 +1,55 @@
+.services-page {
+	.service {
+		> header {
+			@extend %centered-content;
+			max-width: $max-width;
+		}
+
+		> div {
+			@extend %centered-content;
+			max-width: $content-max-width;
+			text-align: center;
+		}
+	}
+}
+
+.introduction {
+	@include h3;
+	text-transform: uppercase;
+	list-style: none;
+
+	> li {
+		margin-bottom: 20px;		
+	}
+}
+
+.promise {
+	@include h4;
+	font-family: helvetica;
+}
+
+.call-to-action {
+	@include h4;
+}
+
+.service-content {
+	@extend %group;
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 60px;	
+
+	> li {
+		width: 100%;
+		float: left;
+		text-align: left;
+		padding-right: 20px;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.service-content {		
+		> li {
+			width: 50%;
+		}
+	}
+}

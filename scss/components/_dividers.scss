@@ -1,0 +1,41 @@
+%hr {
+	border-top: 1px solid $pv-dark-gray;
+	clear: both;
+}
+
+hr {
+	@extend %hr;
+}
+
+$round-info-area-diameter: 100px;
+
+.divider-with-data {
+	@extend %hr;
+	position: relative;
+	margin-top: $round-info-area-diameter;
+	margin-bottom: $round-info-area-diameter;
+
+	> div {
+		position: absolute;
+		left: 50%;
+		top: (-$round-info-area-diameter / 2);
+	}
+}
+
+.price {
+	@include circle($round-info-area-diameter);
+	background: $pv-pink;
+	padding-top: 5px;
+
+	> span {
+		@include price-info-area-text;			
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+		vertical-align: middle;
+	}
+
+	> span:first-child, > span:last-child {
+		font-size: 70%;
+	}		
+}

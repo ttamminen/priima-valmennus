@@ -10,3 +10,15 @@
 		clear: both;
 	}
 }
+
+%centered-content {	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin circle($diameter) {
+	border-radius: 50%;
+	width: $diameter;
+	height: $diameter;
+}
