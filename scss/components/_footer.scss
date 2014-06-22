@@ -1,4 +1,15 @@
 footer {
 	@extend %group;
 	background-color: $pv-lightest-gray;
+	padding-left: $mobile-padding;
+
+	.logo {
+		> img {
+			max-width: 109px;
+		}
+	}
+
+	h5 {
+		display: inline-block;
+	}
 }

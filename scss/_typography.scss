@@ -18,6 +18,8 @@ $p1-size: 1em;//1.25em;
 $p2-size: 0.85em;//1.0625em; 
 $nav-text-size: 1em;
 $price-info-area-font-size: 1em;
+$footer-caption-text-size: 1.625em;
+$footer-text-size: 1.125em;
 
 $helvetica-neue: 'Helvetica Neue', helvetica;
 $helvetica: helvetica, arial;
@@ -78,6 +80,18 @@ $body-font-family: $helvetica;
 	@include rem(font-size, $nav-text-size);
 	font-family: $helvetica-neue;
 	font-weight: 400;
+}
+
+@mixin footer-caption-text {
+	@include rem(font-size, $footer-caption-text-size);
+	font-family: $helvetica-neue;
+	font-weight: 200;
+}
+
+@mixin footer-text {
+	@include rem(font-size, $footer-text-size);
+	font-family: $helvetica-neue;
+	font-weight: 200;
 }
 
 @mixin price-info-area-text {
