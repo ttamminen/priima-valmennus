@@ -1,0 +1,25 @@
+header.main {
+	@extend %group;
+	@extend %centered-content;
+	margin-bottom: 4em;
+	max-width: $content-max-width;
+
+	.logo > img {
+		padding: 4em;
+
+		&:hover {
+			-webkit-transform: scale(1.1);
+		}		
+	}
+}
+
+@media screen and (min-width: 40em) {
+	header.main {
+		margin-bottom: 0;
+		.logo {
+			> img {
+				padding: 2em 0 0 1em;
+			}
+		}
+	}
+}

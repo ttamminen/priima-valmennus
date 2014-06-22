@@ -34,7 +34,8 @@
 
 		&:hover {
 			> a {
-				transition: background-color 0.5s ease;
+				transition: background-color 0.5s,
+							color 0.5s;
 				background-color: lighten($pv-pink, 20%);
 			}
 		}
@@ -72,13 +73,14 @@
 				height: auto;
 
 				&:after {
-				  content: "";
+					content: "";
 				}
 			}
 
 			&:hover {
 				> a {
-				  background-color: lighten($pv-pink, 20%);
+					background-color: $pv-dark-gray;
+					color: $pv-white;
 				}
 			}
 		}

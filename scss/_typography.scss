@@ -27,6 +27,27 @@ $helvetica: helvetica, arial;
 $header-font-family: $helvetica-neue;
 $body-font-family: $helvetica;
 
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot');
+	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/woff/HelveticaNeueLTStd-Th.woff') format('woff'),
+	     url('/fonts/ttf/HelveticaNeueLTStd-Th.ttf')  format('truetype');
+	font-style: normal;
+	font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('/fonts/eot/helveticaneueltstd-md.eot');
+    src: url('/fonts/eot/helveticaneueltstd-md.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/woff/helveticaneueltstd-md.woff') format('woff'),
+         url('/fonts/ttf/helveticaneueltstd-md.ttf') format('truetype'),
+         url('/fonts/svg/helveticaneueltstd-md.svg#HelveticaNeueLTStd65Medium') format('svg');
+    font-style: normal;
+    font-weight: 400;
+}
+
 @mixin h1 {
 	@include rem(font-size, $h1-size);
 	font-family: $header-font-family;

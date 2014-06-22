@@ -1,7 +1,12 @@
 footer {
-	@extend %group;
 	background-color: $pv-lightest-gray;
-	padding-left: $mobile-padding;
+
+	> div {
+		@extend %group;
+		@extend %centered-content;
+		max-width: $content-max-width;
+		padding: 0 0.8em 0.8em 0.8em;
+	}
 
 	.logo {
 		> img {
@@ -9,7 +14,30 @@ footer {
 		}
 	}
 
-	h5 {
+	section {
 		display: inline-block;
 	}
+}
+
+%footer-data {
+	color: $pv-pink;
+
+	h1 {
+		display: inline-block;
+		@include footer-caption-text;
+	}
+
+	ul {
+		> li {
+			@include footer-text;
+		}
+	}	
+}
+
+.locations {
+	@extend %footer-data;
+}
+
+.business {
+	@extend %footer-data;
 }

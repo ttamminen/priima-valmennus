@@ -1,6 +1,6 @@
 .logo {
 	> img {
-		max-width: 100%;
+		max-width: 100%;		
 	}
 }
 
@@ -12,14 +12,7 @@
 
 		> img {
 			max-width: 220px;
-		}
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.logo {
-		> img {
-			max-width: 220px;
+			margin: 0;
 		}
 	}
 }

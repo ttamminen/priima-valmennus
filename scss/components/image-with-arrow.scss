@@ -1,0 +1,17 @@
+.image-with-arrow {
+    position: relative;
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+    }
+
+    .arrow.pointing-left {
+        right: 0;
+    }
+
+    > img {
+        width: 100%;
+    }
+}

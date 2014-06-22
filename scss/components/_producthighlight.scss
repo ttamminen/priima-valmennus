@@ -1,0 +1,51 @@
+.product-highlight {
+	@extend %group;
+
+	h1 {
+		@include h4;
+	}
+
+	p {
+		@include p1;
+	}
+
+	.image-with-arrow {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.product-highlight {
+		.text-wrapper {
+			float: left;
+			width: 50%;
+			padding: 15px 32.5px;
+		}
+
+		.image-with-arrow {
+			display: inline-block;
+			width: 50%;
+			float: left;
+		}
+	}
+
+	.product-highlight.alt {
+		.text-wrapper {
+			float: right;
+		}
+	}
+}
+
+@media screen and (max-width: 40em) {
+	.product-highlight {
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (min-width: 60em) {
+	.product-highlight {
+		.text-wrapper {
+			padding: 30px 65px;
+		}
+	}
+}

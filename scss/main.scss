@@ -11,36 +11,19 @@
 @import "components/buttons";
 @import "components/nav";
 @import "components/arrows";
+@import "components/header";
 @import "components/footer";
 @import "components/logo";
 @import "components/imageheader";
 @import "components/dividers";
+@import "components/news";
+@import "components/producthighlight";
+@import "components/image-with-arrow";
 
 @import "pages/frontpage";
 @import "pages/palvelut";
 
 @import "vendor/responsive-nav";
-
-@font-face {
-	font-family: 'Helvetica Neue';
-	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot');
-	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/woff/HelveticaNeueLTStd-Th.woff') format('woff'),
-	     url('/fonts/ttf/HelveticaNeueLTStd-Th.ttf')  format('truetype');
-	font-style: normal;
-	font-weight: 200;
-}
-
-@font-face {
-    font-family: 'Helvetica Neue';
-    src: url('/fonts/eot/helveticaneueltstd-md.eot');
-    src: url('/fonts/eot/helveticaneueltstd-md.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/woff/helveticaneueltstd-md.woff') format('woff'),
-         url('/fonts/ttf/helveticaneueltstd-md.ttf') format('truetype'),
-         url('/fonts/svg/helveticaneueltstd-md.svg#HelveticaNeueLTStd65Medium') format('svg');
-    font-style: normal;
-    font-weight: 400;
-}
 
 * {
 	box-sizing: border-box;
@@ -86,141 +69,5 @@ img[src*=".svg"] {
 @media screen and (min-width:0\0) {
 	img[src*=".svg"] {
 		width: 100%;
-	}
-}
-
-header.main {
-	@extend %group;
-	@extend %centered-content;
-	margin-bottom: 20px;
-	max-width: $content-max-width;
-}
-
-.news {
-	h1 {
-		@include h4;
-		margin-top: 0;
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.news {
-		width: 38.01169590643275%;
-		float: left;
-		padding: 0 40px;
-		margin-top: 0.67em;
-	}
-}
-
-.social-media-updates {
-	list-style: none;
-	padding: 0;
-
-	> li {
-		> a {
-
-		}
-	}
-
-	span {
-		@include p2;
-		color: $pv-pink;
-		text-transform: uppercase;
-	}
-
-	p {
-		@include p2;
-		margin-top: 0;
-		height: 2.6em;
-		overflow-y: hidden;
-	}
-}
-
-.video {
-	img {
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 40em) {
-	.video {
-		margin-bottom: 40px;
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.video {
-		width: 61.98830409356725%;
-		float: left;
-	}
-}
-
-.image-with-arrow {
-	position: relative;
-
-	.arrow {
-		position: absolute;
-		top: 50%;
-		margin-top: -10px;
-	}
-
-	.arrow.pointing-left {
-		right: 0;
-	}
-
-	> img {
-		width: 100%;
-	}
-}
-
-.product-highlight {
-	@extend %group;
-
-	h1 {
-		@include h4;
-	}
-
-	p {
-		@include p1;
-	}
-
-	.image-with-arrow {
-		display: none;
-	}
-}
-
-@media screen and (min-width: 40em) {
-	.product-highlight {
-		.text-wrapper {
-			float: left;
-			width: 50%;
-			padding: 15px 32.5px;
-		}
-
-		.image-with-arrow {
-			display: inline-block;
-			width: 50%;
-			float: left;
-		}
-	}
-
-	.product-highlight.alt {
-		.text-wrapper {
-			float: right;
-		}
-	}
-}
-
-@media screen and (max-width: 40em) {
-	.product-highlight {
-		margin-bottom: 40px;
-	}
-}
-
-@media screen and (min-width: 60em) {
-	.product-highlight {
-		.text-wrapper {
-			padding: 30px 65px;
-		}
 	}
 }

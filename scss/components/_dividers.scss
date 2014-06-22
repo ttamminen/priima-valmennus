@@ -18,6 +18,7 @@ $round-info-area-diameter: 100px;
 	> div {
 		position: absolute;
 		left: 50%;
+		margin-left: (-$round-info-area-diameter / 2);
 		top: (-$round-info-area-diameter / 2);
 	}
 }
