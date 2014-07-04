@@ -1,0 +1,73 @@
+@mixin fade-image() {
+	position: relative;
+	text-align: center;
+
+	img {
+		width: 100%;
+		height: auto;
+		transition: 0.2s all linear;
+		z-index: 1;
+	}
+
+	.overlay {
+		opacity: 0;
+		display: none;
+		background-color: black;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: opacity 0.2s ease;
+		z-index: 2;
+	}
+
+	.caption, .description {
+		position: absolute;
+		left: 0;
+		right: 0;
+		padding-left: 2em;
+		padding-right: 2em;
+		color: $pv-white;
+		transition: all 0.2s ease;
+		z-index: 3;
+	}
+
+	.caption {
+		@include h2;
+		top: 40%;
+		text-transform: uppercase;
+	}
+
+	.description {
+		@include rem(font-size, 1.75em);
+		top: 47%;
+		left: -200px;
+		color: $pv-white;
+		opacity: 0;
+	}
+
+	&:hover {
+		> img {
+			filter: url(/palvelut#blur); // TODO: find a way to remove 'palvelut'
+			filter: blur(3px);
+			-webkit-filter: blur(3px);
+			-moz-filter: blur(3px);
+			filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+		}
+
+		.overlay {
+			opacity: 0.5;
+			display: block;
+		}
+
+		.caption {
+			top: 20%;
+		}
+
+		.description {
+			opacity: 1;
+			left: 0;
+		}
+	}
+}

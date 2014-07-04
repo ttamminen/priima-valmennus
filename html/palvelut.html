@@ -16,8 +16,13 @@
 				@@include('./_palvelut.tpl.html')
 			</div>
 		</div>
-		@@include('./templates/_footer.tpl.html')		
+		@@include('./templates/_footer.tpl.html')
 
 		@@include('./templates/_scripts.tpl.html')
+		<svg>
+			<filter id="blur" x="0%" y="0%">
+				<feGaussianBlur stdDeviation="2"/>
+			</filter>
+		</svg>
 	</body>
 </html>

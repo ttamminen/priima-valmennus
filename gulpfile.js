@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
 var fileinclude = require('gulp-file-include');
+var prefix = require('gulp-autoprefixer');
 
 // for the release
 var htmlmin = require('gulp-htmlmin'); 
@@ -29,6 +30,7 @@ gulp.task('lint', function() {
 gulp.task('sass', function() {
     return gulp.src('scss/*.scss')
         .pipe(sass())
+        .pipe(prefix("last 2 version", "> 1%", "ie 8"))
         .pipe(gulp.dest('dist/css'))
         .pipe(livereload());
 });
@@ -81,11 +83,6 @@ gulp.task('font', function () {
     return gulp.src('fonts/**')
         .pipe(gulp.dest('dist/fonts'));
 });
-
-/*gulp.task('static', function () {
-    return gulp.src('static/**')
-        .pipe
-});*/
 
 gulp.task('image', function () {
     return gulp.src('images/**')
