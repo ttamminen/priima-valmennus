@@ -1,32 +1,48 @@
-.services-page {
+.service {
+	margin-bottom: 4em;
+
+	> header {
+		@extend %centered-content;
+		max-width: $max-width;
+	}
+
+	> div {
+		@extend %centered-content;
+		max-width: $content-max-width;
+		text-align: center;
+	}
+
+	.promise {
+		@include h4;
+		font-family: helvetica;
+	}
+
+	.introduction {
+		@include h3;
+		text-transform: uppercase;
+		list-style: none;
+		padding-left: 0;
+
+		> li {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.service-content {
+	@extend .two-columns-list;
+
+	> li {
+		@extend .two-columns-list-item;
+	}
+}
+
+@media screen and (min-width: 40em) {
 	.service {
-		margin-bottom: 4em;
-
-		> header {
-			@extend %centered-content;
-			max-width: $max-width;
-		}
-
-		> div {
-			@extend %centered-content;
-			max-width: $content-max-width;
-			text-align: center;
-		}
-
-		.promise {
-			@include h4;
-			font-family: helvetica;
-		}
-
 		.introduction {
-			@include h3;
-			text-transform: uppercase;
-			list-style: none;
-
-			> li {
-				margin-bottom: 20px;
-			}
-		}		
+			padding-left: 2em;
+			padding-right: 2em;
+		}
 	}
 }
 

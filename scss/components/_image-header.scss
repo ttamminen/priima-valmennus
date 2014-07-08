@@ -1,4 +1,4 @@
-.image-title-highlight {
+.image-header {
 	position: relative;
 
 	h1 {
@@ -8,11 +8,19 @@
 	    position:absolute;
 	    text-align:center;
 	    margin: 0;
-	    top: 40%;
+	    top: 12%;
 	    width: 100%
 	}
 
 	img {
 		max-width: 100%;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.image-header {
+		h1 {
+			top: 40%;
+		}
 	}
 }
