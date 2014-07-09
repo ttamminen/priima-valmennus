@@ -31,10 +31,10 @@
 }
 
 .service-content {
-	@extend .two-columns-list;
+	@extend .list-two-cols;
 
 	> li {
-		@extend .two-columns-list-item;
+		@extend .list-two-cols-item;
 	}
 }
 
