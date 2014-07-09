@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		@@include('./templates/_head.tpl.html', {
+			"title": "Jepa jee",
+			"description": "Dumdi dum"
+		})
+	</head>
+	<body>
+		<div class="page-wrap">
+			@@include('./templates/_header.tpl.html')
+			<div class="content-wrap">
+				@@include('./_otayhteytta.tpl.html')
+			</div>
+		</div>
+		@@include('./templates/_footer.tpl.html')
+
+		@@include('./templates/_scripts.tpl.html')
+	</body>
+</html>
