@@ -10,41 +10,58 @@
 	}
 
 	.overlay {
-		opacity: 0;
-		display: none;
-		background-color: black;
+		will-change: opacity;
+
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		right: 0;
-		transition: opacity 0.2s ease;
+		opacity: 0;
+		display: none;
 		z-index: 2;
+
+		background-color: black;
+
+		transition: opacity 0.2s ease;
 	}
 
 	.caption, .description {
+		will-change: left, top;
 		position: absolute;
 		left: 0;
-		right: 0;
+		right: 0;		
 		padding-left: 2em;
 		padding-right: 2em;
-		color: $pv-white;
-		transition: all 0.2s ease;
 		z-index: 3;
+		color: $pv-white;		
+		
+		transition: left 0.2s, top 0.2s ease;
 	}
 
 	.caption {
 		@include h2;
+		@include rem(font-size, $h2-size * 0.8);
 		top: 40%;
 		text-transform: uppercase;
 	}
 
 	.description {
-		@include rem(font-size, 1.75em);
-		top: 47%;
+		@include rem(font-size, 1.2em);
+		top: 40%;
 		left: -200px;
 		color: $pv-white;
 		opacity: 0;
+	}
+
+	&.long-texts { 
+		.caption {
+			display: none;
+		}
+
+		.description {
+			top: 15%;
+		}
 	}
 
 	&:hover {
@@ -61,13 +78,25 @@
 			display: block;
 		}
 
-		.caption {
-			top: 20%;
+		.caption {			
+			top: 15%;
 		}
 
-		.description {
+		.description {			
 			opacity: 1;
 			left: 0;
 		}
 	}
+
+	@media screen and (min-width: 50em) {
+		& {
+			.caption {
+				@include rem(font-size, $h2-size);
+			}
+
+			.description {
+				@include rem(font-size, 1.4em);
+			}
+		}
+	}	
 }

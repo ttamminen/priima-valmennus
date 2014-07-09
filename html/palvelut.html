@@ -19,10 +19,12 @@
 		@@include('./templates/_footer.tpl.html')
 
 		@@include('./templates/_scripts.tpl.html')
-		<svg>
-			<filter id="blur" x="0%" y="0%">
-				<feGaussianBlur stdDeviation="2"/>
-			</filter>
-		</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+			<defs>
+				<filter id="blur">
+					<feGaussianBlur stdDeviation="3"/>
+				</filter>
+			</defs>
+		</svg>		
 	</body>
 </html>
