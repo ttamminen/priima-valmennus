@@ -3,6 +3,7 @@
 
 	h1 {
 		@include h1;
+		@include rem(font-size, 2.2em);
 		text-transform: uppercase;
 		left: 0;
 	    position:absolute;
@@ -14,6 +15,14 @@
 
 	img {
 		max-width: 100%;
+	}
+}
+
+@media screen and (min-width: 30em) {
+	.image-header {
+		h1 {
+			@include rem(font-size, $h1-size);
+		}
 	}
 }
 

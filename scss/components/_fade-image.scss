@@ -44,6 +44,7 @@
 		@include rem(font-size, $h2-size * 0.8);
 		top: 40%;
 		text-transform: uppercase;
+		display: inline-block;
 	}
 
 	.description {
@@ -55,10 +56,6 @@
 	}
 
 	&.long-texts { 
-		.caption {
-			display: none;
-		}
-
 		.description {
 			top: 15%;
 		}
@@ -79,7 +76,11 @@
 		}
 
 		.caption {			
-			top: 15%;
+			top: 15%;			
+		}
+
+		&.long-texts .caption {
+			display: none;
 		}
 
 		.description {			

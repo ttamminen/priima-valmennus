@@ -130,7 +130,10 @@ gulp.task('server', function (next) {
                 req.url = '/dist/index.html';            
             } else if (urlPath === '/palvelut') {
                 req.url = '/dist/palvelut.html';
-            } else if (
+            } else if (urlPath === '/otayhteytta') {
+                req.url = '/dist/otayhteytta.html';
+            }
+            else if (
                 ['css', 'html', 'ico', 'less', 'js', 'png', 'txt', 'xml'].indexOf(urlPath.split('.').pop()) == -1 &&
                 ['bower_components', 'fonts', 'images', 'src', 'vendor', 'views'].indexOf(urlPath.split('/')[1]) == -1) {
                 req.url = '/dist/index.html';

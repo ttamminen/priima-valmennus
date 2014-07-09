@@ -15,7 +15,7 @@
 	.promise {
 		@include h4;
 		font-family: helvetica;
-		margin-bottom: 4em;
+		margin-bottom: 2em;
 	}
 
 	.introduction {
@@ -30,6 +30,10 @@
 	}
 }
 
+.service-divider {
+	display: none;
+}
+
 .service-content {
 	@extend .list-two-cols;
 
@@ -39,10 +43,18 @@
 }
 
 @media screen and (min-width: 40em) {
+	.service-divider {
+		display: inline-block;
+	}
+
 	.service {
 		.introduction {
 			padding-left: 2em;
 			padding-right: 2em;
+		}
+
+		.promise {
+			margin-bottom: 4em;
 		}
 	}
 }
