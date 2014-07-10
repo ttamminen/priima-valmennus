@@ -28,6 +28,10 @@
 			margin-bottom: 20px;
 		}
 	}
+
+	.options {
+		@extend %group;
+	}
 }
 
 .service-divider {

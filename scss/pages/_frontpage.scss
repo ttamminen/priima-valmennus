@@ -2,6 +2,16 @@
 	@extend %centered-content;
 	max-width: $content-max-width;
 
+	.product-highlight {
+		.text-wrapper {
+			text-align: center;
+
+			h1, p {
+				text-align: left;
+			}			
+		}
+	}
+
 	.video {
 		img {
 			width: 100%;
@@ -14,10 +24,18 @@
 		}
 	}
 
+	@media screen and (min-width: 30em) {
+		.product-highlight {
+			.text-wrapper {
+				text-align: left;
+			}
+		}	
+	}
+
 	@media screen and (min-width: 40em) {
 		.video {
 			width: 61.98830409356725%;
 			float: left;
-		}
-	}	
+		}	
+	}
 }
