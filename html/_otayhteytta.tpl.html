@@ -1,6 +1,6 @@
 <section>
 	<h1>Jätä yhteydenottopyyntö tai anna palautetta</h1>
-	<form>
+	<form class="contact-form">
 		<label for="name">Etunimi:</label>
 		<input type="text" name="name" id="name" required pattern=".{2,}" />
 		<span class="icon-valid"></span>
@@ -21,11 +21,15 @@
 			</li>
 		</ul>
 		
-		<label for="email">Sähköposti:</label>
-		<input type="email" name="email" id="email" required />
+		<div class="email-wrapper">
+			<label for="email">Sähköposti:</label>
+			<input type="email" name="email" id="email" required />
+		</div>
 
-		<label for="tel">Puhelinnumero:</label>
-		<input type="tel" name="tel" id="tel" required />
+		<div class="telephone-wrapper">
+			<label for="tel">Puhelinnumero:</label>
+			<input type="tel" name="tel" id="tel" required />
+		</div>
 
 		<label for="contact-reason">Yhteydenottoni koskee:</label>
 		<select id="contact-reason" required>
@@ -36,6 +40,7 @@
 
 		<label for="message">Sana vapaa:</label>
 		<textarea name="message" id="message" required rows="8"></textarea>
+		<input type="submit" value="Lähetä" />
 	</form>
 </section>
 <section>

@@ -2,7 +2,7 @@ label {
 	display: block;
 }
 
-input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+input[type="text"], input[type="tel"], input[type="email"], input[type="submit"], select, textarea {
 	display: inline-block;
 	border: 2px solid $pv-light-gray;
 
@@ -16,10 +16,6 @@ input[type="text"], input[type="tel"], input[type="email"], select, textarea {
 		& + .icon-valid {
 			display: inline-block;
 		}
-	}
-
-	&:invalid {
-		border-color: red;
 	}
 }
 
