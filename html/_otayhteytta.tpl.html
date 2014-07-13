@@ -1,32 +1,41 @@
 <section>
 	<h1>Jätä yhteydenottopyyntö tai anna palautetta</h1>
 	<form>
-		<label>Yhteydenottoni koskee:
-			<select>
-				<option>Haluan lisätietoa Oivallus-paketista</option>
-				<option>Haluan lisätietoa lajivalmennuksesta</option>
-			</select>
-		</label>
-		<label>Etunimi:
-			<input type="text" name="name" required />
-		</label>
-		<label>Haluan että minuun otetaan yhteyttä..
-			<label>Sähköpostitse
-				<input type="radio" value="email" name="contactmethod" checked="checked" />
-			</label>
-			<label>Soittamalla
-				<input type="radio" value="tel" name="contactmethod" />
-			</label>
-		</label>
-		<label>Puhelinnumero:
-			<input type="tel" name="tel" />
-		</label>
-		<label>Sähköposti:
-			<input type="email" name="email" />
-		</label>
-		<label>Sana vapaa:
-			<textarea required></textarea>
-		</label>
+		<label for="name">Etunimi:</label>
+		<input type="text" name="name" id="name" required pattern=".{2,}" />
+		<span class="icon-valid"></span>
+		
+		<label>Haluan että minuun otetaan yhteyttä..</label>
+		<ul class="contact-method">
+			<li>
+				<label>
+					<input type="radio" value="email" name="contactmethod" checked="checked" />
+					Sähköpostitse
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="radio" value="tel" name="contactmethod"  />
+					Soittamalla
+				</label>
+			</li>
+		</ul>
+		
+		<label for="email">Sähköposti:</label>
+		<input type="email" name="email" id="email" required />
+
+		<label for="tel">Puhelinnumero:</label>
+		<input type="tel" name="tel" id="tel" required />
+
+		<label for="contact-reason">Yhteydenottoni koskee:</label>
+		<select id="contact-reason" required>
+			<option value="">-- valitse mitä asia koskee --</option>
+			<option value="oivallus">Haluan lisätietoa Oivallus-paketista</option>
+			<option value="lajivalmennus">Haluan lisätietoa lajivalmennuksesta</option>
+		</select>
+
+		<label for="message">Sana vapaa:</label>
+		<textarea name="message" id="message" required rows="8"></textarea>
 	</form>
 </section>
 <section>

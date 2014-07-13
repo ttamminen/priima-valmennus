@@ -1,13 +1,39 @@
-input, select, textarea {
+label {
 	display: block;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+	display: inline-block;
 	border: 2px solid $pv-light-gray;
 
-	width: 100%;
 	padding: 0.2em;
 	margin-top: 0.3em;
 	margin-bottom: 1em;	
 
 	&:valid {
 		border-color: green;
+
+		& + .icon-valid {
+			display: inline-block;
+		}
+	}
+
+	&:invalid {
+		border-color: red;
+	}
+}
+
+.contact-method {
+	@extend %plain-list;
+}
+
+.icon-valid {
+	font-size: 1.2em;
+	color: green;
+}
+
+form {
+	.icon-valid {
+		display: none;
 	}
 }

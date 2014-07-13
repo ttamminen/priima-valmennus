@@ -63,6 +63,14 @@
 	}
 }
 
+.satisfaction-guarantee {
+	.icon-check {
+		color: white;
+		font-size: 32px;
+		line-height: 90px;
+	}
+}
+
 .call-to-action {
 	@include h4;
 }
