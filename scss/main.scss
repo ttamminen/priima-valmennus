@@ -25,7 +25,8 @@
 @import "components/guarantee";
 
 @import "pages/frontpage";
-@import "pages/palvelut";
+@import "pages/services";
+@import "pages/contact";
 @import "pages/styleguide";
 
 @import "vendor/responsive-nav";
@@ -40,7 +41,7 @@ body {
 	color: $text-color;
 }
 
-.page-wrap {
+.page-wrapper {
 	@extend %centered-content;
 	max-width: $max-width;
 	padding: 0 0.8em 0.8em 0.8em;

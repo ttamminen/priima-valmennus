@@ -24,3 +24,8 @@ $button-background-color: $pv-white;
 button {
 	@extend .button;
 }
+
+.submit {
+	@extend .button;
+	padding: 1em 2.6em;
+}

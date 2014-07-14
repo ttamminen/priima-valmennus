@@ -10,6 +10,16 @@ var AppModule = (function ($) {
 	}
 
 	onContactMethodChange = function (e) {
+		var $tel = $context.find('.tel-wrapper');
+		var $email = $context.find('.email-wrapper');
+		if(this.value === "email") {
+			$tel.hide();
+			$email.show();
+		}
+		else if(this.value === "tel") {
+			$email.hide();
+			$tel.show();
+		}	
 	};
  
 	return {

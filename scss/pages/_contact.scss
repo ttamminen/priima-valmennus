@@ -1,0 +1,31 @@
+#contact {
+	.email-wrapper, .tel-wrapper {
+		@extend .field-wrapper;
+	}
+
+	.tel-wrapper {
+		display: none;
+	}
+
+	.contact-method {
+		display: inline-block;
+		width: 100%;
+
+		label {
+			width: 200px;
+			border-radius: 3px;
+			border: 1px solid #D1D3D4;
+			margin-bottom: 10px;
+		}
+
+		> li {
+			label:first-child {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	.content-wrapper {
+
+	}
+}
