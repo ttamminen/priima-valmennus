@@ -1,49 +1,56 @@
 <section id="contact">
-	<h1>Jätä yhteydenottopyyntö tai anna palautetta</h1>
-	<form class="contact-form">
-		<div class="field-wrapper">
-			<label for="name">Etunimi:</label>
-			<input type="text" name="name" id="name" required pattern=".{2,}" />
-			<span class="icon-valid"></span>
-		</div>
-		
-		<label>Haluan että minuun otetaan yhteyttä..</label>
-		<ul class="contact-method">
-			<li>
-				<input type="radio" class="radio" value="email" id="contact-method-email" name="contactmethod" checked="checked" />
-				<label for="contact-method-email">Sähköpostitse</label>					
-			</li>
-			<li>
-				<input type="radio" class="radio" value="tel" id="contact-method-tel" name="contactmethod"  />
-				<label for="contact-method-tel">Soittamalla</label>							
-			</li>
-		</ul>
-		
-		<div class="email-wrapper">
-			<label for="email">Sähköposti:</label>
-			<input type="email" name="email" id="email" required />
-		</div>
+	<a href="#contact-form">Yhteydenotto</a> | <a href="#contact-info">Yhteystietomme</a>
 
-		<div class="tel-wrapper">
-			<label for="tel">Puhelinnumero:</label>
-			<input type="tel" name="tel" id="tel" required />
-		</div>
+	<section id="contact-form">
+		<header>
+			<h1>Jätä yhteydenotto&shy;pyyntö tai anna palautetta</h1>
+		</header>
+		<form enctype="multipart/form-data" method="post" action="https://tx3.wufoo.eu/forms/q1ucgp4e155ospc/#public">
+			<div class="field-wrapper">
+				<label for="name">Etunimi:</label>
+				<input type="text" name="Field1" id="name" required pattern=".{2,}" />
+				<span class="icon-valid"></span>
+			</div>
+			
+			<label>Haluan että minuun otetaan yhteyttä..</label>
+			<ul class="contact-method">
+				<li>
+					<input type="radio" class="radio" value="email" id="contact-method-email" name="contactmethod" checked />
+					<label for="contact-method-email">Sähköpostitse</label>					
+				</li>
+				<li>
+					<input type="radio" class="radio" value="tel" id="contact-method-tel" name="contactmethod"  />
+					<label for="contact-method-tel">Soittamalla</label>							
+				</li>
+			</ul>
+			
+			<div class="email-wrapper">
+				<label for="email">Sähköposti:</label>
+				<input type="email" name="Field3" id="email" required />
+			</div>
 
-		<label for="contact-reason">Yhteydenottoni koskee (vapaaehtoinen):</label>
-		<select id="contact-reason">
-			<option value="">--</option>
-			<option value="oivallus">Haluan lisätietoa Oivallus-paketista</option>
-			<option value="lajivalmennus">Haluan lisätietoa lajivalmennuksesta</option>
-		</select>
+			<div class="tel-wrapper">
+				<label for="tel">Puhelinnumero:</label>
+				<input type="tel" name="Field4" id="tel" required />
+			</div>
 
-		<label for="message">Sana vapaa:</label>
-		<textarea name="message" id="message" required rows="8"></textarea>
-		<input type="submit" class="submit" id="submit-contact-form" value="Lähetä" />
-	</form>
-</section>
-<section>
-	<h1>Priima-valmennus toimii pääkaupunkiseudulla: Vantaa, Kerava, Tuusula, Järvenpää, Hyvinkää, Sipoo jne.</h1>
-	<p>
-		Ota yhteyttä:
-	</p>
+			<label for="contact-reason">Yhteydenottoni koskee (vapaaehtoinen):</label>
+			<select id="contact-reason">
+				<option value="">--</option>
+				<option value="oivallus">Haluan lisätietoa Oivallus-paketista</option>
+				<option value="lajivalmennus">Haluan lisätietoa lajivalmennuksesta</option>
+			</select>
+
+			<label for="message">Sana vapaa:</label>
+			<textarea name="Field6" id="message" required rows="8" placeholder="Mikäli olet kiinnostunut palveluistani, niin kerro hieman itsestäsi ja minkälaisia tavoitteita sinulla on. Pystyn siten paremmin kertomaan mitä voin tarjota Sinulle."></textarea>
+			<input type="submit" class="submit" id="submit-contact-form" value="Lähetä" />
+			<input type="hidden" id="idstamp" name="idstamp" value="UfPf0/MWA9kruOnfIF7u6PFKr1N7sFq4XpeJkH1lgwY=" />
+		</form>
+	</section>
+	<section id="contact-info">
+		<h1>Priima-valmennus toimii pääkaupunki&shy;seudulla: Vantaa, Kerava, Tuusula, Järvenpää, Hyvinkää, Sipoo jne.</h1>
+		<p>
+			Ota yhteyttä:
+		</p>
+	</section>
 </section>

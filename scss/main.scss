@@ -41,7 +41,7 @@ body {
 	color: $text-color;
 }
 
-.page-wrapper {
+.page-wrap {
 	@extend %centered-content;
 	max-width: $max-width;
 	padding: 0 0.8em 0.8em 0.8em;
