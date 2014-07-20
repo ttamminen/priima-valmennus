@@ -44,7 +44,7 @@ body {
 .page-wrap {
 	@extend %centered-content;
 	max-width: $max-width;
-	padding: 0 0.8em 0.8em 0.8em;
+	padding: $mobile-padding;
 }
 
 @media screen and (min-width: 40em) {

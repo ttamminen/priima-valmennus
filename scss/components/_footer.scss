@@ -1,5 +1,6 @@
 footer {
 	background-color: $pv-lightest-gray;
+	clear: both;
 
 	> div {
 		@extend %group;

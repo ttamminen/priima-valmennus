@@ -1,4 +1,7 @@
 #contact-form {
+	max-width: 30em;
+	padding: $mobile-padding;
+
 	.email-wrapper, .tel-wrapper {
 		@extend .field-wrapper;
 	}
@@ -24,10 +27,4 @@
 			}
 		}
 	}
-}
-
-.message-writing-tips {
-	display: none;
-	background-color: $pv-lightest-gray;
-	padding: 0.5em;
 }
