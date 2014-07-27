@@ -19,17 +19,20 @@ var htmlreplace = require('gulp-html-replace');
 // for the clean
 var clean = require('gulp-clean');
 
-// Lint Task
+var onError = function (err) {  
+    gutil.beep();
+    console.log(err);
+};
+
 gulp.task('lint', function() {
     return gulp.src('js/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
-// Compile Our Sass
 gulp.task('sass', function() {
     return gulp.src('scss/*.scss')
-        .pipe(sass())
+        .pipe(sass()).on('error', gutil.log)
         .pipe(prefix("last 2 version", "> 1%", "ie 8"))
         .pipe(gulp.dest('dist/css'))
         .pipe(livereload());
@@ -106,7 +109,7 @@ gulp.task('static', function () {
 });
 
 // Watch Files For Changes
-gulp.task('watch', function() {
+gulp.task('watch', function() {    
     gulp.watch('js/*.js', ['lint', 'scripts']);
     gulp.watch('scss/**', ['sass']);
     gulp.watch('html/**', ['html', 'sass', 'lint', 'scripts']);

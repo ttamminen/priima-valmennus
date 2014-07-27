@@ -57,20 +57,12 @@ input.radio:hover:not(:checked) ~ label:before {
 	color: #C2C2C2;
 }
 
-input.radio:hover:not(:checked) ~ label {
-	color: #888;
-}
-
 /* toggle on */
 input.radio:checked ~ label:before {
 	content:'\2714';
 	text-indent: .9em;
-	color: rgb(236, 246, 139);
-	background-color: rgb(64, 154, 97);
-}
-
-input.radio:checked ~ label {
-	color: #777;
+	color: $pv-white;
+	background-color: $pv-pink;
 }
 
 /* radio focus */
@@ -85,7 +77,10 @@ input.radio:focus ~ label:before {
 
 .icon-valid {
 	font-size: 2em;
-	color: green;
+	color: $pv-green;
+	position: absolute;
+	right: 10px;
+	top: 40px;
 }
 
 .field-wrapper {
@@ -102,4 +97,14 @@ form {
 	.icon-valid {
 		display: none;
 	}
+}
+
+input[type=text], textarea {
+	transition: all 0.30s ease-in-out;
+	outline: none;
+}
+ 
+input[type=text]:focus, textarea:focus {
+	box-shadow: 0 0 5px $pv-pink;
+	border: 2px solid $pv-pink;
 }

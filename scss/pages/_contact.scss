@@ -1,30 +1,131 @@
-#contact-form {
-	max-width: 30em;
-	padding: $mobile-padding;
+$field-max-width: 410px;
 
-	.email-wrapper, .tel-wrapper {
-		@extend .field-wrapper;
+.contact-wrapper {
+	@extend %centered-content;
+	max-width: $content-max-width;
+}
+
+.contact-nav {
+	text-align: center;
+
+	a {
+		color: $pv-gray;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	.contact-nav {
+		display: none;
+	}
+}
+
+.firstname-wrapper, .email-wrapper, .tel-wrapper {
+	@extend .field-wrapper;
+	max-width: $field-max-width;
+}
+
+#contact-form {
+	@extend %full;	
+	float: left;
+	margin-bottom: 4em;
+
+	h1 {
+		@include h2-smaller;
 	}
 
 	.tel-wrapper {
 		display: none;
+	}	
+}
+
+.contact-method {
+	display: inline-block;
+	width: 100%;
+
+	label {
+		width: 200px;
+		border-radius: 3px;
+		border: 1px solid #D1D3D4;
+		margin-bottom: 10px;
 	}
 
-	.contact-method {
-		display: inline-block;
-		width: 100%;
+	> li {
+		float: left;
+		margin-right: 0.5em;
 
-		label {
-			width: 200px;
-			border-radius: 3px;
-			border: 1px solid #D1D3D4;
-			margin-bottom: 10px;
-		}
-
-		> li {
-			label:first-child {
-				margin-top: 10px;
-			}
+		label:first-child {
+			margin-top: 10px;
 		}
 	}
+
+	> li:last-child {
+		margin-right: 0;
+	}
+}
+
+#contact-info {
+	@extend %full;
+	float: right;
+	border-top: 1px solid $pv-gray;
+	padding-top: 2em;
+
+	h1 {
+		@include h4;
+	}
+
+	.icon-facebook, .icon-blogger {
+		font-size: 32px;
+		color: $pv-dark-gray;
+		vertical-align: middle;
+	}
+}
+
+.contact-header, .contact-person-name, .contact-person-title, .contact-person-email, .contact-person-tel {
+	display: block;
+	color: $pv-darkish-gray;
+	font-family: helvetica;
+	font-weight: 400;
+}
+
+.contact-person-name, .contact-person-title, .contact-person-email, .contact-person-tel {
+	@include rem(font-size, 1.25em);
+}
+
+.contact-person-name {	
+	@include rem(font-size, 1.625em);
+	font-family: $helvetica-neue;
+	color: $pv-pink;
+	text-transform: uppercase;
+	font-weight: 200;
+}
+
+.contact-header, .contact-person-tel {
+	margin-bottom: 0.8em;
+}
+
+.social-media-icons {
+	@extend %plain-list;
+
+	a {
+		text-decoration: none;
+		color: $pv-dark-gray;		
+	}
+
+	li {
+		margin-bottom: 1em;
+	}
+}
+
+.social-media-name {	
+	@include h4;
+	@include rem(font-size, 1.5em);	
+	color: $pv-dark-gray;
+	padding-left: 0.8em;
+	vertical-align: middle;
+}
+
+.contact-header {
+	@include h4;
+	@include rem(font-size, 1.5em);	
+	color: $pv-darkish-gray;
 }
