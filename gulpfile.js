@@ -104,7 +104,7 @@ gulp.task('image', function () {
 });
 
 gulp.task('static', function () {
-    return gulp.src('static/**')
+    return gulp.src('static/**', { dot: true })
         .pipe(gulp.dest('dist'));
 });
 
