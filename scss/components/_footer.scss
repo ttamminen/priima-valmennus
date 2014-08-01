@@ -10,6 +10,8 @@ footer {
 	}
 
 	.logo {
+		display: none;
+
 		> img {
 			max-width: 109px;
 		}
@@ -17,6 +19,14 @@ footer {
 
 	section {
 		display: inline-block;
+	}
+}
+
+@media screen and (min-width: 30em) {
+	footer {
+		.logo {
+			display: inline-block;
+		}
 	}
 }
 
@@ -37,6 +47,10 @@ footer {
 
 .locations {
 	@extend %footer-data;
+	
+	ul {
+		margin: 0;
+	}
 }
 
 .business {

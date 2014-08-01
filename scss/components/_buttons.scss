@@ -18,7 +18,11 @@ $button-background-color: $pv-white;
 
 	&:focus {
 		outline: 0;
-	}	
+	}
+
+	&:visited {
+		color: $pv-pink;
+	}
 }
 
 button {

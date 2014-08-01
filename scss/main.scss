@@ -63,6 +63,11 @@ body {
 
 a {
 	cursor: pointer;
+	color: $pv-gray;
+
+	&:visited {
+		color: $pv-gray;
+	}
 }
 
 /*
