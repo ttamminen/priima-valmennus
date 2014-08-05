@@ -17,6 +17,10 @@ footer {
 		}
 	}
 
+	a {
+		color: $pv-pink;
+	}
+
 	section {
 		display: inline-block;
 	}
@@ -47,12 +51,21 @@ footer {
 
 .locations {
 	@extend %footer-data;
-	
+	border-bottom: 1px solid lighten($pv-light-gray, 20%);
+	padding-bottom: 1em;
+
 	ul {
+		@extend %plain-list;
+		@extend %group;
 		margin: 0;
+		
+		li {
+			float: left;
+			width: 50%;
+		}
 	}
 }
 
 .business {
-	@extend %footer-data;
+	@extend %footer-data;	
 }
