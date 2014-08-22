@@ -44,12 +44,10 @@
 
 @media screen and (max-width: 40em) {
 	.nav-collapse {
-		ul > li {
-			> a {
-				background-color: $pv-pink;
-				font-size: 1.5em;
-				line-height: 2em;
-			}
+		ul > li > a {
+			background-color: $pv-pink;
+			font-size: 1.5em;
+			line-height: 2em;
 		}
 	}
 }
@@ -60,7 +58,6 @@
 
 		ul > li {
 			width: auto;
-			height: 140px;
 			float: left;
 			border: none;
 

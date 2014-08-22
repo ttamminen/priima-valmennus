@@ -1,3 +1,9 @@
+$footer-estimated-height: 280px;
+$footer-logo-estimated-height: 63px;
+
+$one-fifth: 100% / 5;
+$two-fifths: $one-fifth * 2;
+
 footer {
 	background-color: $pv-lightest-gray;
 	clear: both;
@@ -13,24 +19,23 @@ footer {
 		display: none;
 
 		> img {
-			max-width: 109px;
+			max-width: 130px;
 		}
 	}
 
 	a {
 		color: $pv-pink;
 	}
-
-	section {
-		display: inline-block;
-	}
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 40em) {
 	footer {
 		.logo {
 			display: inline-block;
-		}
+			float: left;
+			width: $one-fifth;
+			margin-top: $footer-estimated-height / 2 - $footer-logo-estimated-height / 2;
+		}	
 	}
 }
 
@@ -38,7 +43,7 @@ footer {
 	color: $pv-pink;
 
 	h1 {
-		display: inline-block;
+		display: block;
 		@include footer-caption-text;
 	}
 
@@ -46,7 +51,20 @@ footer {
 		> li {
 			@include footer-text;
 		}
-	}	
+	}
+
+	@media screen and (min-width: 25em) {
+		& {
+			float: left;
+			width: 50%;
+		}
+	}
+
+	@media screen and (min-width: 40em) {
+		& {
+			width: $two-fifths - 3%; // WTF: why isn't this working
+		}
+	}
 }
 
 .locations {
@@ -62,6 +80,13 @@ footer {
 		li {
 			float: left;
 			width: 50%;
+		}
+	}
+
+	@media screen and (min-width: 25em) {
+		& {
+			padding-right: 5%;
+			border-bottom: none;
 		}
 	}
 }

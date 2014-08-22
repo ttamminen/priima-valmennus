@@ -135,7 +135,9 @@ gulp.task('server', function (next) {
                 req.url = '/dist/palvelut.html';
             } else if (urlPath === '/otayhteytta') {
                 req.url = '/dist/otayhteytta.html';
-            }
+            } else if (urlPath === '/priimavalmennus') {
+                req.url = '/dist/priimavalmennus.html';
+            }            
             else if (
                 ['css', 'html', 'ico', 'less', 'js', 'png', 'txt', 'xml'].indexOf(urlPath.split('.').pop()) == -1 &&
                 ['bower_components', 'fonts', 'images', 'src', 'vendor', 'views'].indexOf(urlPath.split('/')[1]) == -1) {

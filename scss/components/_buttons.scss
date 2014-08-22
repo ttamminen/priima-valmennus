@@ -1,27 +1,30 @@
-$button-color: $pv-pink;
+$button-border-color: $pv-pink;
+$button-text-color: $pv-pink;
 $button-background-color: $pv-white;
+$button-hover-text-color: $pv-white;
+$button-hover-background-color: $pv-pink;
 
 .button {
-	background: $button-background-color;
+	background-color: $button-background-color;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: $button-color;
-	border: 3px solid $button-color;
+	color: $button-text-color;
+	border: 3px solid $button-border-color;
 	padding: 0.5em 0.6em;
 	display: inline-block;
 	transition: background-color 0.4s ease;	
 
-	&:hover {
+	&:visited {
+		color: $button-text-color;
+	}
+
+	&:hover, &:active {
 		background-color: $pv-pink;
-		color: $pv-white;
+		color: $button-hover-text-color;
 	}
 
 	&:focus {
 		outline: 0;
-	}
-
-	&:visited {
-		color: $pv-pink;
 	}
 }
 
