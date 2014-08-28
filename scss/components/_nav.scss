@@ -8,7 +8,11 @@
 	display: block;
 }
 
-@media screen and (min-width: 40em) {
+.nav-toggle.active {
+	border-bottom: 0;
+}
+
+@media screen and (min-width: 30em) {
 	.nav-toggle {
 		display: none;
 	}
@@ -18,17 +22,22 @@
 	ul > li {
 		> a {
 			@include nav-text;
-			color: $pv-white;
-			margin-bottom: 1px;
+			font-size: 1.5em;
+			line-height: 2em;
+			font-weight: 200;		
 			text-decoration: none;
 			text-align: center;
+
+			color: $pv-pink;
+			border: 2px solid $pv-pink;
+			border-bottom: 0;
 			display: block;
 		}
 
 		&.active {
 			> a {
 				background-color: $pv-dark-gray;
-				color: $pv-white;
+				color: $pv-pink;
 			}
 		}
 
@@ -42,12 +51,32 @@
 	}
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 30em) {
 	.nav-collapse {
-		ul > li > a {
-			background-color: $pv-pink;
-			font-size: 1.5em;
-			line-height: 2em;
+		ul > li:last-of-type > a {
+			border-bottom: 2px solid $pv-pink;
+		}
+	}
+}
+
+@media screen and (min-width: 30em) and (max-width: 40em) {
+	.nav-collapse {
+		max-height: 125px !important;
+
+		ul {
+			> li {
+				@extend %group;
+				width: 49%;
+				display: inline-block;
+
+				> a {
+					border: 2px solid $pv-pink;
+				}
+			}
+
+			> li:nth-child(n+3) > a {
+				border-top: 0;
+			}
 		}
 	}
 }
@@ -64,10 +93,13 @@
 			> a {
 				@include nav-text;
 				line-height: 180px;
+				
 				padding: 0 10px;
+				height: auto;
+
 				background-color: $pv-white;
 				color: $pv-dark-gray;
-				height: auto;
+				border: 0;
 
 				&:after {
 					content: "";

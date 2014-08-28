@@ -1,15 +1,36 @@
 header.main {
 	@extend %group;
 	@extend %centered-content;
-	margin-bottom: 4em;
+	margin-bottom: 2em;
 	max-width: $content-max-width;
 
 	.logo > img {
-		padding: 4em;
+		padding: 1em;
+		margin-bottom: 1em;
 
 		&:hover {
 			transform: scale(1.1);
 		}		
+	}
+}
+
+@media screen and (min-width: 25em) and (max-width: 30em) {
+	header.main {
+		.logo {
+			> img {
+				padding: 1em 6em;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 30em) and (max-width: 40em) {
+	header.main {
+		.logo {
+			> img {
+				padding: 1em 8em;
+			}
+		}
 	}
 }
 
