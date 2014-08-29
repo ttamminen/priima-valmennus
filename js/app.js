@@ -1,6 +1,9 @@
+/* global _gaq */
+/* exported AppModule */
+
 var AppModule = (function ($) {
+	"use strict";
  	var $context = $('#contact-form form');
- 	var $messageWritingTips = $context.find('.message-writing-tips');
 
 	function initForm() {
 		var $contactMethod = $context.find('.contact-method');
@@ -10,10 +13,10 @@ var AppModule = (function ($) {
 			$selection.first().trigger('change');
 		}
 
-		//bindTrackingEvents();
+		bindTrackingEvents();
 	}	
 
-	bindTrackingEvents = function () {
+	var bindTrackingEvents = function () {
 		$context.find('input[type="submit"]').submit(function () {
 			_gaq.push(['_trackEvent', 'Yhteydenotto', 'Lähetä palaute']);
 		});
@@ -22,7 +25,7 @@ var AppModule = (function ($) {
 		});
 	};
 
-	onContactMethodChange = function (e) {
+	var onContactMethodChange = function () {
 		var $tel = $context.find('.tel-wrapper');
 		var $telField = $tel.find('input');
 		var $email = $context.find('.email-wrapper');

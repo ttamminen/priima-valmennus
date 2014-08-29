@@ -1,3 +1,5 @@
+/* global Modernizr, responsiveNav, AppModule */
+
 Modernizr.load([
 	{
 		load: 'js/vendor/responsive-nav.js',
@@ -6,7 +8,7 @@ Modernizr.load([
 				throw new Error("Could not load responsive nav");
 			}
 
-			var nav = responsiveNav(".nav-collapse", {
+			responsiveNav(".nav-collapse", {
 				label: "☰ Menu"
 			});
 		}
