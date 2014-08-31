@@ -1,3 +1,5 @@
+/* exported Utils */
+
 var Utils = {
 	addClass: function (el, className) {
 		if (el.classList) { 

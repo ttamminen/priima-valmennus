@@ -1,4 +1,4 @@
-/* global Modernizr, responsiveNav, AppModule */
+/* global Modernizr, responsiveNav, AppModule, TouchModule */
 
 Modernizr.load([
 	{
