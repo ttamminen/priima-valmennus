@@ -1,17 +1,6 @@
 .service {
 	margin-bottom: 4em;
 
-	> header {
-		@extend %centered-content;
-		max-width: $max-width;
-	}
-
-	> div {
-		@extend %centered-content;
-		max-width: $content-max-width;
-		text-align: center;
-	}
-
 	.promise {
 		@include h4;
 		font-family: helvetica;
@@ -19,8 +8,7 @@
 	}
 
 	.introduction {
-		@include h3;
-		text-transform: uppercase;
+		@include h3;		
 		list-style: none;
 		padding-left: 0;
 

@@ -1,0 +1,13 @@
+.slider {
+	overflow: hidden;
+	position: relative;
+}
+
+.slider .page {
+	float: left;
+	display: none;
+}
+
+.slider .page.active {
+	display: block;
+}

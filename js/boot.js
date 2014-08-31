@@ -22,9 +22,21 @@ Modernizr.load([
 		}
 	},
 	{
+		load: '/js/utils.js'
+	},	
+	{
 		load: '/js/app.js',
 		complete: function () {
 			AppModule.init();
+		}
+	},
+	{
+		test: Modernizr.touch,
+		yep: ['/js/vendor/hammer.js', '/js/touch.js'],
+		complete: function () {
+			if(Modernizr.touch) {
+				TouchModule.init();
+			}
 		}
 	}
 ]);

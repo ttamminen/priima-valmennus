@@ -108,6 +108,7 @@ $body-font-family: $helvetica;
 	font-family: $header-font-family;
 	font-weight: 200;
 	color: $h3-color;
+	text-transform: uppercase;
 }
 
 @mixin h4 {

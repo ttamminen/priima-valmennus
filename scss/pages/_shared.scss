@@ -1,0 +1,12 @@
+.u-content {
+	> header {
+		@extend %centered-content;
+		max-width: $max-width;
+	}
+
+	> div {
+		@extend %centered-content;
+		max-width: $content-max-width;
+		text-align: center;
+	}
+}

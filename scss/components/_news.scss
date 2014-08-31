@@ -35,21 +35,50 @@
 	p {
 		@include p2;
 		@include rem(font-size, $p2-size * 1.3);
-		height: 2.6em * 1.3;		
 		margin-top: 0;
 		margin-bottom: 0;
-		height: 2.6em;
 		overflow-y: hidden;
 	}
 }
 
-@media screen and (min-width: 40em) and (max-width: 50em) {
+@media screen and (min-width: 40em) and (max-width: 45em) {
+	.social-media-updates {
+		p {
+			@include rem(font-size, $p2-size * 0.8);
+			height: $p2-size * 2 * 1.5;
+		}
+
+		span {
+			@include rem(font-size, $p2-size * 0.8);
+		}		
+	}
+}
+
+@media screen and (min-width: 45em) {
+	.news {
+		h1 {
+			margin: 0.5em 0;
+		}
+	}
+
+	.social-media-updates {
+		p {
+			@include rem(font-size, $p2-size);
+			height: $p2-size * 2 * 1.5;
+		}
+
+		span {
+			@include rem(font-size, $p2-size);
+		}		
+	}
+}
+
+@media screen and (min-width: 40em) {
 	.news {
 		margin-top: 0;
 
 		h1 {
-			@include rem(font-size, 1.2em);
-			margin-bottom: 0.5em;
+			@include rem(font-size, 1.2em);			
 		}
 	}
 
@@ -63,14 +92,6 @@
 			&:last-child {
 				margin-bottom: 0;
 			}
-		}
-
-		span {
-			@include rem(font-size, 0.8em);
-		}
-
-		p {
-			@include rem(font-size, 0.8em);
 		}
 	}
 }

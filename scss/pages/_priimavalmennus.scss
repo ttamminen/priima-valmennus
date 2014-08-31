@@ -1,5 +1,10 @@
 .priima-valmennus {
 	h2 {
-		@include h5;
+		@include h3;
+	}
+
+	h3 {
+		@include h4;
+		text-transform: none;
 	}
 }
