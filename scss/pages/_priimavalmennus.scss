@@ -8,3 +8,19 @@
 		text-transform: none;
 	}
 }
+
+.instructor {
+	h1 {
+		@include rem(font-size, 2.125em);
+		text-transform: uppercase;
+		color: $pv-dark-gray;
+		margin-bottom: 0;
+	}
+
+	p {
+		@include rem(font-size, 1.625em);
+		font-family: $header-font-family;
+		font-weight: 200;
+		margin: 0;
+	}
+}

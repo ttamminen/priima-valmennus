@@ -3,11 +3,13 @@
 	position: relative;
 }
 
-.slider .page {
+.slider-page {
 	float: left;
+	background-color: $pv-blue;
+	padding: 1em;
 	display: none;
 }
 
-.slider .page.active {
+.slider-page.active {
 	display: block;
 }

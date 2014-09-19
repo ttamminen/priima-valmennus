@@ -112,7 +112,7 @@ gulp.task('static', function () {
 gulp.task('watch', function() {    
     gulp.watch('js/*.js', ['lint', 'scripts']);
     gulp.watch('scss/**', ['sass']);
-    gulp.watch('html/**', ['html', 'sass', 'lint', 'scripts']);
+    gulp.watch('html/**/*.html', ['html', 'sass', 'lint', 'scripts']);
     gulp.watch('images/**', ['image']);
 });
 

@@ -11,6 +11,7 @@
 
 	.overlay {
 		will-change: opacity;
+		transition: opacity 0.2s ease;
 
 		position: absolute;
 		top: 0;
@@ -22,8 +23,6 @@
 		z-index: 2;
 
 		background-color: black;
-
-		transition: opacity 0.2s ease;
 	}
 
 	.caption, .description {
@@ -31,8 +30,6 @@
 		position: absolute;
 		left: 0;
 		right: 0;		
-		padding-left: 2em;
-		padding-right: 2em;
 		z-index: 3;
 		color: $pv-white;		
 		
@@ -48,16 +45,21 @@
 	}
 
 	.description {
-		@include rem(font-size, 1.2em);
-		top: 40%;
-		left: -200px;
+		@include rem(font-size, 1em);
+		top: 20%;		
 		color: $pv-white;
 		opacity: 0;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
 	}
 
-	&.long-texts { 
+	&.long-texts {
+		.caption {
+			top: 30%;
+		}
+
 		.description {
-			top: 15%;
+			top: 40%;
 		}
 	}
 
@@ -75,17 +77,34 @@
 			display: block;
 		}
 
-		.caption {			
-			top: 15%;			
-		}
-
-		&.long-texts .caption {
+		.caption {
 			display: none;
 		}
 
 		.description {			
 			opacity: 1;
 			left: 0;
+		}
+	}
+
+	@media screen and (min-width: 40em) {
+		&.long-texts:hover {
+			.description {				
+				top: 15%;
+			}
+		}
+
+		& {
+			.description {
+				@include rem(font-size, 1.2em);
+			}
+		}
+	}
+
+	@media screen and (min-width: 40em) {
+		.description {
+			padding-left: 1em;
+			padding-right: 1em;
 		}
 	}
 

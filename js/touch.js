@@ -7,11 +7,16 @@ var TouchModule = (function () {
 	return {
 		init: function() {
 			var slider = document.getElementById('slider');
-			var hammer = new Hammer(slider);
-			var pages = slider.querySelectorAll('.page');
+			if(!slider)
+			{
+				return;
+			}
 
-			hammer.on('panleft panright', function () {
-				var current = slider.querySelectorAll('.page.active');
+			var hammer = new Hammer(slider);
+			var pages = slider.querySelectorAll('.slider-page');
+
+			hammer.on('swipe', function (e) {
+				var current = slider.querySelectorAll('.slider-page.active');
 
 				var target = current[0].nextElementSibling;
 				if(target === null)

@@ -52,11 +52,7 @@
 }
 
 .satisfaction-guarantee {
-	.icon-check {
-		color: white;
-		font-size: 32px;
-		line-height: 90px;
-	}
+	margin-bottom: 4em;
 }
 
 .call-to-action {
@@ -67,7 +63,7 @@
 	@include fade-image;
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 30em) {
 	.option {
 		float: left;
 		width: 50%;
