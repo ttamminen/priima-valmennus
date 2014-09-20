@@ -4,7 +4,7 @@ $footer-logo-estimated-height: 63px;
 $one-fifth: 100% / 5;
 $two-fifths: $one-fifth * 2;
 
-footer {
+.page-footer {
 	background-color: $pv-lightest-gray;
 	clear: both;
 
@@ -29,7 +29,7 @@ footer {
 }
 
 @media screen and (min-width: 40em) {
-	footer {
+	.page-footer {
 		.logo {
 			display: inline-block;
 			float: left;
