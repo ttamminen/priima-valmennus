@@ -54,14 +54,6 @@ gulp.task('scriptsmin', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
-/*gulp.task('fileinclude', function () {
-    return gulp.src(path.join(paths.templates, '*.tpl.html'))
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
-});*/
-
 gulp.task('html', function () {
     return gulp.src('html/*.html')
         .pipe(fileinclude({
@@ -109,9 +101,13 @@ gulp.task('static', function () {
 });
 
 // Watch Files For Changes
-gulp.task('watch', function() {    
+gulp.task('watch', ['server'], function() {
+    var server = livereload();
+    gulp.watch('dist/**').on('change', function(file) {
+        server.changed(file.path);
+    });
     gulp.watch('js/*.js', ['lint', 'scripts']);
-    gulp.watch('scss/**', ['sass']);
+    gulp.watch('scss/**/*.scss', ['sass']);
     gulp.watch('html/**/*.html', ['html', 'sass', 'lint', 'scripts']);
     gulp.watch('images/**', ['image']);
 });
@@ -156,6 +152,6 @@ gulp.task('server', function (next) {
 gulp.task('base', ['lint', 'sass', 'image', 'font', 'static']);
 
 // Default Task
-gulp.task('default', ['base', 'scripts', 'html', 'watch', 'server' ]);
+gulp.task('default', ['base', 'scripts', 'html', 'server', 'watch' ]);
 
 gulp.task('build', ['base', 'scriptsmin', 'htmlmin', 'image']);

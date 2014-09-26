@@ -4,9 +4,10 @@
 		max-width: $max-width;
 	}
 
-	> div {
+	> div, section {
 		@extend %centered-content;
 		max-width: $content-max-width;
 		text-align: center;
+		padding: 0 $content-padding;
 	}
 }

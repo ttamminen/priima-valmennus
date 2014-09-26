@@ -7,8 +7,8 @@
 @import "rem";
 
 @import "typography";
+@import "icons";
 
-@import "components/icons";
 @import "components/form";
 @import "components/buttons";
 @import "components/nav";
@@ -51,14 +51,7 @@ body {
 
 .page-wrap {
 	@extend %centered-content;
-	max-width: $max-width;
-	padding: $mobile-padding;
-}
-
-@media screen and (min-width: 40em) {
-	.page-wrap {
-		padding: 0;
-	}
+	max-width: $max-width;	
 }
 
 .content-wrap {

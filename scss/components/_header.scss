@@ -3,6 +3,7 @@ header.main {
 	@extend %centered-content;
 	margin-bottom: 2em;
 	max-width: $content-max-width;
+	padding: 0 $content-padding;
 
 	.logo > img {
 		padding: 1em;
