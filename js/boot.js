@@ -8,9 +8,12 @@ Modernizr.load([
 				throw new Error("Could not load responsive nav");
 			}
 
-			responsiveNav(".nav-collapse", {
-				label: "☰ Menu"
-			});
+			var nav = document.getElementsByClassName('nav-collapse');
+			if(nav.length > 0) {
+				responsiveNav('.nav-collapse', {
+					label: '☰ Menu'
+				});
+			}
 		}
 	},
 	{

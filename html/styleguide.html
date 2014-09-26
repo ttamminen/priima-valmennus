@@ -4,15 +4,12 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<link rel="stylesheet" href="css/main.css">
+		@@include('./templates/_head.tpl.html', {
+			"title": "Jepa jee",
+			"description": "Dumdi dum"
+		})
 	</head>
-	<body>
+	<body class="u-content">
 		<div class="page-wrap">
 			<h1>Styleguide</h1>
 			<h2>Typography</h2>
@@ -137,51 +134,23 @@
 			<hr>
 			<h2>Misc</h2>
 			<h3>Testimonial</h3>
-			<blockquote class="testimonial">
-				<p>
-					<img src="images/quote_left.svg" class="icon medium quote" alt="Vasen lainausmerkki">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur.
-					<img src="images/quote_right.svg" class="icon medium quote" alt="Oikea lainausmerkki">
-				</p>
-				<footer>
-					<span class="testimonial-name">Person X.</span><span class="testimonial-title">Title</span>
-				</footer>
-			</blockquote>
-			<blockquote class="testimonial">
-				<p>
-					<img src="images/quote_left.svg" class="icon medium quote" alt="Vasen lainausmerkki">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur.
-					<img src="images/quote_right.svg" class="icon medium quote" alt="Oikea lainausmerkki">
-				</p>
-				<footer>
-					<span class="testimonial-name">Person X.</span><span class="testimonial-title">Title</span>
-				</footer>
-			</blockquote>
-			<blockquote class="testimonial">
-				<p>
-					<img src="images/quote_left.svg" class="icon medium quote" alt="Vasen lainausmerkki">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur.
-					<img src="images/quote_right.svg" class="icon medium quote" alt="Oikea lainausmerkki">
-				</p>
-				<footer>
-					<span class="testimonial-name">Person X.</span><span class="testimonial-title">Title</span>
-				</footer>
-			</blockquote>
+			@@include('./templates/_testimonial.tpl.html', {
+				"testimonial": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+				"givenByName": "Person X.",
+				"givenByTitle": "Title"
+			})
+			@@include('./templates/_testimonial.tpl.html', {
+				"testimonial": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+				"givenByName": "Person X.",
+				"givenByTitle": "Title"
+			})
+			@@include('./templates/_testimonial.tpl.html', {
+				"testimonial": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+				"givenByName": "Person X.",
+				"givenByTitle": "Title"
+			})
 		</div>
 
-		<script src="js/vendor/responsive-nav.js"></script>
-		<script src="js/app.js"></script>
+		@@include('./templates/_scripts.tpl.html')
 	</body>
 </html>

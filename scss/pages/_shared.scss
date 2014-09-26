@@ -6,8 +6,11 @@
 
 	> div, section {
 		@extend %centered-content;
-		max-width: $content-max-width;
-		text-align: center;
+		max-width: $content-max-width;		
 		padding: 0 $content-padding;
 	}
+}
+
+.u-text-centered {
+	text-align: center;
 }
