@@ -7,6 +7,10 @@ $slider-button-height: 2em;
 	padding: 0 $slider-button-width + 0.5em;
 }
 
+.slider-wrapper {
+	@extend %group;
+}
+
 .touch .slider {
 	padding: 0;
 }
@@ -17,16 +21,35 @@ $slider-button-height: 2em;
 	display: none;
 }
 
+@media screen and (min-width: 40em) {
+	.slider {
+		padding: 0;
+	}
+
+	.slider-page {
+		@include thirds;
+		display: block;
+	}
+
+	.slider-prev, .slider-next {
+		display: none;
+	}
+}
+
 .slider-page.active {
 	display: block;
+}
+
+.touch .slider-prev,
+.touch .slider-next {
+	display: none;
 }
 
 .slider-prev, .slider-next {
 	position: absolute;
 	width: $slider-button-width;
 	height: $slider-button-height;
-	top: 50%;
-	margin-top: -($slider-button-height / 2);
+	top: 120px;
 
 	&:hover:before {
 		border-right-color: $pv-white;

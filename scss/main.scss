@@ -8,6 +8,7 @@
 
 @import "typography";
 @import "icons";
+@import "feature-detection";
 
 @import "components/form";
 @import "components/buttons";
@@ -67,6 +68,8 @@ a {
 		color: $pv-gray;
 	}
 }
+
+wbr:after { content: "\00200B" }
 
 /*
  * Let's target IE to respect aspect ratios and sizes for img tags containing SVG files

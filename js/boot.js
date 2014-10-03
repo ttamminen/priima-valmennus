@@ -1,4 +1,4 @@
-/* global Modernizr, responsiveNav, AppModule, TouchModule */
+/* global Modernizr, responsiveNav, AppModule, SliderModule, TouchSliderModule */
 
 (function () {
 	"use strict";
@@ -38,10 +38,14 @@
 		},
 		{
 			test: Modernizr.touch,
-			yep: ['/js/vendor/hammer.js', '/js/touch.js'],
+			yep: ['/js/vendor/hammer.js', '/js/touchslider.js'],
+			nope: ['/js/slider.js'],
 			complete: function () {
 				if(Modernizr.touch) {
-					TouchModule.init();
+					TouchSliderModule.init();
+				}
+				else {
+					SliderModule.init();
 				}
 			}
 		}

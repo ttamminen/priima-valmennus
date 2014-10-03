@@ -23,6 +23,15 @@
 	height: $diameter;
 }
 
+@mixin thirds($margin: 1%) {
+	width: ((100% - $margin * 2) / 3);
+	margin-right: $margin;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
 %plain-list {
 	list-style: none;
 	padding-left: 0;

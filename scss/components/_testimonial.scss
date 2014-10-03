@@ -1,4 +1,4 @@
-.testimonial {
+﻿.testimonial {
 	position: relative;
 	font-style: italic;
 	background-color: lighten($pv-blue, 10%);
@@ -29,13 +29,20 @@
 }
 
 .testimonial-name {
+	margin-right: 0.5em;
+	display: inline-block;
+
 	&:before {
-		content: "�\00a0";
+		content: "—\00a0";
 		color: #999;
 	}
 }
 
 .testimonial-title {
 	color: $pv-light-gray;
-	margin-left: 0.5em;
+	display: inline-block;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
 }

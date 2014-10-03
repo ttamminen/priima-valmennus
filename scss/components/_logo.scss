@@ -1,4 +1,6 @@
 .logo {
+	height: 200px;
+
 	> img {
 		max-width: 100%;		
 	}
@@ -10,9 +12,13 @@
 		min-width: 190px;
 		max-width: 220px;
 
+		height: 150px;
+
 		> img {
 			max-width: 220px;
 			margin: 0;
+
+			max-height: 100%;
 		}
 	}
 }

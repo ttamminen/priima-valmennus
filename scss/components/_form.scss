@@ -11,7 +11,7 @@ input[type="text"], input[type="tel"], input[type="email"], select, textarea {
 	width: 100%;
 	padding: 0.4em;
 	margin-top: 0.3em;
-	margin-bottom: 1em;	
+	margin-bottom: 1em;
 
 	&:valid {
 		border-color: green;
@@ -19,7 +19,7 @@ input[type="text"], input[type="tel"], input[type="email"], select, textarea {
 		& + .icon-valid {
 			display: inline-block;
 		}
-	}	
+	}
 }
 
 /* hide input */
@@ -89,7 +89,7 @@ input.radio:focus ~ label:before {
 	.icon-valid {
 		position: absolute;
 		right: 10px;
-		top: 40px;	
+		top: 40px;
 	}
 }
 
@@ -99,12 +99,12 @@ form {
 	}
 }
 
-input[type=text], textarea {
+input[type="text"], input[type="email"], input[type="tel"], textarea {
 	transition: all 0.30s ease-in-out;
 	outline: none;
-}
- 
-input[type=text]:focus, textarea:focus {
-	box-shadow: 0 0 5px $pv-pink;
-	border: 2px solid $pv-pink;
+
+	&:focus {
+		box-shadow: 0 0 5px $pv-pink;
+		border: 2px solid $pv-pink;
+	}
 }

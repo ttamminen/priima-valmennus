@@ -1,19 +1,21 @@
-.fade-image-example {
-	@include fade-image;
-}
+.styleguide {
+	.fade-image-example {
+		@include fade-image;
+	}
 
-.styleguide-section {
-	background-color: #eee;
-	padding: 0 1em;
-}
+	.styleguide-section {
+		background-color: #eee;
+		padding: 0 1em;
+	}
 
-.testimonial {
-	width: 100%;
-	float: left;	
-}
-
-@media screen and (min-width: 40em) {
 	.testimonial {
-		width: (100% / 3);
+		width: 100%;
+		float: left;	
+	}
+
+	@media screen and (min-width: 40em) {
+		.testimonial {
+			width: (100% / 3);
+		}
 	}
 }
