@@ -27,43 +27,34 @@
 
 		Mielipiteesi on meille tärkeä.
 
+		<p class="only-on-touch only-on-mobile-and-tablet">Pyyhkäise vasemmalle tai oikealle nähdäksesi lisää</p>
+
 		<div class="slider" id="slider">
+			<button class="slider-prev js-slider-prev"></button>
 			<div class="slider-wrapper">
 				<div class="slider-page active">
-					<blockquote>
-						<p>
-							<img src="images/quote_left.svg" class="icon medium quote" alt="Vasen lainausmerkki">
-						Runsaan vuoden olemme tehneet yhteistyötä Veran kanssa ja yhteiset ryhmäliikuntatunnit ovat meillä Prismassa parantaneet työhyvinvointia sekä -tyytyväisyyttä. Palvelu on ollut mutkatonta ja tunnit ovat suunniteltu ajatellen kaupan alan työntekijöitä mm. niska-hartiajumppa. Tunneille voi osallistua kuka vaan iästä ja kunnosta riippumatta.
-							<img src="images/quote_right.svg" class="icon medium quote" alt="Oikea lainausmerkki">
-						</p>
-						<footer>
-							<span class="testimonial-name">Elina L.</span><span class="testimonial-title">henkilöstöpäällikkö Prisma Kerava</span>
-						</footer>
-					</blockquote>
+					@@include('./templates/_testimonial.tpl.html', {
+						"testimonial": "Runsaan vuoden olemme tehneet yhteistyötä Veran kanssa ja yhteiset ryhmäliikuntatunnit ovat meillä Prismassa parantaneet työhyvinvointia sekä -tyytyväisyyttä. Palvelu on ollut mutkatonta ja tunnit ovat suunniteltu ajatellen kaupan alan työntekijöitä mm. niska-hartiajumppa. Tunneille voi osallistua kuka vaan iästä ja kunnosta riippumatta.",
+						"givenByName": "Elina L.",
+						"givenByTitle": "henkilöstöpäällikkö Prisma Kerava"
+					})
 				</div>
 				<div class="slider-page">
-					<blockquote>
-						<p>Oma-aloitteinen harjoitteluni kävi yksipuoliseksi eikä muutoksia tapahtunut. Aloitettuamme Veran kanssa yhteistyön tuloksia alkoi näkyä: lihasmassa kasvoi, rasva paloi ja ylimääräiset nesteet hävisivät. Ilman ohjausta ja tukea en olisi päässyt kehityksessäni näin huimasti eteenpäin.
-						</p>
-						<footer>
-							<span class="testimonial-name">Maria J.</span><span class="testimonial-title">nuorisotyöntekijä</span>
-						</footer>
-					</blockquote>
+					@@include('./templates/_testimonial.tpl.html', {
+						"testimonial": "Oma-aloitteinen harjoitteluni kävi yksipuoliseksi eikä muutoksia tapahtunut. Aloitettuamme Veran kanssa yhteistyön tuloksia alkoi näkyä: lihasmassa kasvoi, rasva paloi ja ylimääräiset nesteet hävisivät. Ilman ohjausta ja tukea en olisi päässyt kehityksessäni näin huimasti eteenpäin.",
+						"givenByName": "Maria J.",
+						"givenByTitle": "nuorisotyöntekijä"
+					})
 				</div>
 				<div class="slider-page">
-					<blockquote>						
-						<p>
-							<img src="images/quote_left.svg" alt="Vasen lainausmerkki" class="quote-left">
-						Yhteistyö Veran kanssa ylitti kaikki odotukset. Vaikka olen aikaisemminkin liikkunut aktiivisesti, niin treenien monipuolisuus tuli silti yllätyksenä. Koen että neljä kuukautta kestäneen treenijakson jälkeen minulla on eväät huomattavasti tasapainoisempaan ja kokonaisvaltaisempaan harjoitteluun. Ainut asia mikä jäi harmittamaan on se, että en palkannut häntä jo aikaisemmin.
-							<img src="images/quote_right.svg" alt="Oikea lainausmerkki" class="quote-right">
-						</p>
-						
-						<footer>
-							<span class="testimonial-name">Mikko S.</span><span class="testimonial-title">ohjelmistosuunnittelija</span>
-						</footer>
-					</blockquote>
+					@@include('./templates/_testimonial.tpl.html', {
+						"testimonial": "Yhteistyö Veran kanssa ylitti kaikki odotukset. Vaikka olen aikaisemminkin liikkunut aktiivisesti, niin treenien monipuolisuus tuli silti yllätyksenä. Koen että neljä kuukautta kestäneen treenijakson jälkeen minulla on eväät huomattavasti tasapainoisempaan ja kokonaisvaltaisempaan harjoitteluun. Ainut asia mikä jäi harmittamaan on se, että en palkannut häntä jo aikaisemmin.",
+						"givenByName": "Mikko S.",
+						"givenByTitle": "ohjelmistosuunnittelija"
+					})
 				</div>
 			</div>
+			<button class="slider-next js-slider-next"></button>
 		</div>
 
 		Haluamme kehittää toimintaamme jatkuvasti entistä paremmaksi. Siksi kaikki palaute on meille kullan arvoista!
