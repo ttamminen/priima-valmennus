@@ -4,28 +4,46 @@
 var TouchModule = (function () {
 	"use strict";
 
+	var slider = null,
+		pages = null;
+
+	function nextSlide() {
+		var current = slider.querySelectorAll('.slider-page.active');
+
+		var target = current[0].nextElementSibling;
+		if(target === null)
+		{
+			target = pages[0];
+		}
+		Utils.addClass(target, 'active');
+		Utils.removeClass(current[0], 'active');
+	}
+
+	function prevSlide() {
+		var current = slider.querySelectorAll('.slider-page.active');
+
+		var target = current[0].previousElementSibling;
+		if(target === null)
+		{
+			target = pages[0];
+		}
+		Utils.addClass(target, 'active');
+		Utils.removeClass(current[0], 'active');
+	}	
+
 	return {
 		init: function() {
-			var slider = document.getElementById('slider');
-			if(!slider)
+			this.slider = document.getElementById('slider');
+			if(!this.slider)
 			{
 				return;
 			}
 
 			var hammer = new Hammer(slider);
-			var pages = slider.querySelectorAll('.slider-page');
+			this.pages = slider.querySelectorAll('.slider-page');
 
-			hammer.on('swipe', function (e) {
-				var current = slider.querySelectorAll('.slider-page.active');
-
-				var target = current[0].nextElementSibling;
-				if(target === null)
-				{
-					target = pages[0];
-				}
-				Utils.addClass(target, 'active');
-				Utils.removeClass(current[0], 'active');
-			});
+			hammer.on('swipeleft', nextSlide);
+			hammer.on('swiperight', prevSlide);
 		}
 	};
 

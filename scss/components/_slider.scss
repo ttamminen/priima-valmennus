@@ -1,15 +1,70 @@
+$slider-button-width: 2em;
+$slider-button-height: 2em;
+
 .slider {
 	overflow: hidden;
 	position: relative;
+	padding: 0 $slider-button-width + 0.5em;
+}
+
+.touch .slider {
+	padding: 0;
 }
 
 .slider-page {
 	float: left;
-	background-color: $pv-blue;
-	padding: 1em;
+	width: 100%;
 	display: none;
 }
 
 .slider-page.active {
 	display: block;
+}
+
+.slider-prev, .slider-next {
+	position: absolute;
+	width: $slider-button-width;
+	height: $slider-button-height;
+	top: 50%;
+	margin-top: -($slider-button-height / 2);
+
+	&:hover:before {
+		border-right-color: $pv-white;
+		border-left-color: $pv-white;
+	}
+
+	&:before {
+		content: " ";
+		position: absolute;
+		right: 8px;
+		width: 0;
+		height: 0;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		top: 7px;		
+	}
+}
+
+.slider-prev {
+	left: 0;
+
+	&:before {
+		left: 8px;
+		border-right: 15px solid $pv-pink;		
+	}	
+}
+
+.slider-next {
+	right: 0;
+
+	&:before {
+		right: 8px;
+		border-left: 15px solid $pv-pink;
+	}
+}
+
+.touch {
+	.slider-prev, .slider-next {
+		display: none;
+	}
 }

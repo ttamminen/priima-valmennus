@@ -1,9 +1,20 @@
 .testimonial {
-	margin: 0;	
+	position: relative;
 	font-style: italic;
-	background-color: #cceaf0;
-	padding: 1em;
+	background-color: lighten($pv-blue, 10%);
+	padding: 2em 2.5em 1em 2.5em;
+	margin: 0;
 	border-radius: 1em;
+
+	&:before {
+		content: "";
+		background: url('/images/quote_left.svg') no-repeat 0 0;
+		position: absolute;
+		width: 1em;
+		height: 1em;
+		left: 1em;
+		background-size: contain;
+	}
 }
 
 .testimonial-text {
@@ -12,9 +23,19 @@
 }
 
 .testimonial-given-by {
-
+	margin-top: 1em;
+	color: $pv-pink;
+	font-style: normal;
 }
 
 .testimonial-name {
-	
+	&:before {
+		content: "—\00a0";
+		color: #999;
+	}
+}
+
+.testimonial-title {
+	color: $pv-light-gray;
+	margin-left: 0.5em;
 }
