@@ -1,17 +1,17 @@
 @mixin fade-image() {
 	position: relative;
-	text-align: center;
+	text-align: center;	
 
 	img {
 		width: 100%;
 		height: auto;
-		transition: 0.2s all linear;
+		//transition: 0.2s all linear;
 		z-index: 1;
 	}
 
 	.overlay {
 		will-change: opacity;
-		transition: opacity 0.2s ease;
+		transition: opacity .25s ease-in-out;
 
 		position: absolute;
 		top: 0;
@@ -19,7 +19,6 @@
 		left: 0;
 		right: 0;
 		opacity: 0;
-		display: none;
 		z-index: 2;
 
 		background-color: black;
@@ -64,14 +63,6 @@
 	}
 
 	&:hover {
-		> img {
-			filter: url(/palvelut#blur); // TODO: find a way to remove 'palvelut'
-			filter: blur(3px);
-			-webkit-filter: blur(3px);
-			-moz-filter: blur(3px);
-			filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
-		}
-
 		.overlay {
 			opacity: 0.5;
 			display: block;

@@ -11,12 +11,6 @@
 	}
 }
 
-%centered-content {	
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 @mixin circle($diameter) {
 	border-radius: 50%;
 	width: $diameter;
@@ -43,4 +37,18 @@
 
 %half {
 	width: 50%;
+}
+
+.u-centered-text {
+	text-align: center;
+}
+
+%centered-content {	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-centered-content {
+	@extend %centered-content;
 }
