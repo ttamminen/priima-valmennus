@@ -8,7 +8,7 @@
 		{
 			load: 'js/vendor/responsive-nav.js',
 			complete: function () {
-				if(!responsiveNav) {
+				if(typeof responsiveNav === "undefined") {
 					throw new Error("Could not load responsive nav");
 				}
 

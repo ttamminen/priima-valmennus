@@ -59,15 +59,10 @@ input.radio:hover:not(:checked) ~ label:before {
 
 /* toggle on */
 input.radio:checked ~ label:before {
-	content:'\2714';
+	content:'\2713';
 	text-indent: .9em;
 	color: $pv-white;
 	background-color: $pv-pink;
-}
-
-/* radio focus */
-input.radio:focus ~ label:before {
-	box-shadow: 0 0 0 3px #999;
 }
 
 .contact-method {

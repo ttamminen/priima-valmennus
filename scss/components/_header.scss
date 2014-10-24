@@ -1,6 +1,7 @@
 header.main {
 	@extend %group;
 	@extend %centered-content;
+	height: 180px;
 	margin-bottom: 2em;
 	max-width: $content-max-width;
 	padding: 0 $content-padding;

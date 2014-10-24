@@ -21,6 +21,8 @@ $nav-height: 180px;
 }
 
 .nav-collapse {
+	@extend %group;
+
 	ul > li {
 		> a {
 			@include nav-text;
