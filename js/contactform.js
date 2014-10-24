@@ -1,7 +1,7 @@
 /* global _gaq, jQuery */
-/* exported AppModule */
+/* exported ContactFormModule */
 
-var AppModule = (function ($) {
+var ContactFormModule = (function ($) {
 	"use strict";
  	var $context = $('#contact-form form');
 

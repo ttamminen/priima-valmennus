@@ -1,4 +1,5 @@
-/* global Modernizr, responsiveNav, AppModule, SliderModule, TouchSliderModule */
+/* global Modernizr, responsiveNav, SliderModule, 
+		  TouchSliderModule, ContactFormModule, NewsModule, JSONP, _ */
 
 (function () {
 	"use strict";
@@ -28,12 +29,15 @@
 			}
 		},
 		{
-			load: '/js/utils.js'
+			load: ['/js/utils.js', '/js/vendor/lodash.compat.min.js', '/js/vendor/JSONP.js']
 		},
 		{
-			load: '/js/app.js',
+			load: ['/js/contactform.js', '/js/news.js'],
 			complete: function () {
-				AppModule.init();
+				ContactFormModule.init();
+				JSONP('http://priima-valmennus.apphb.com/api/facebook', 'callback', function (data) {
+					NewsModule.init(data);
+				});
 			}
 		},
 		{

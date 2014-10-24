@@ -5,27 +5,6 @@
 	<section class="news">
 		<h1>Ajankohtaista</h1>
 		<ul class="social-media-updates">
-			<li>
-				<a>
-					<span>1. huhtikuuta</span>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span>1. huhtikuuta</span>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</a>
-			</li>
-			<li>
-				<a>
-					<span>1. huhtikuuta</span>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-				</a>
-			</li>
 		</ul>
 	</section>
 	<section class="product-highlight">
@@ -51,3 +30,14 @@
 		</div>
 	</section>
 </div>
+
+<script type="text/template" id="tmpl-news-update">
+	<% _.forEach(updates, function(update) { %>
+	<li>
+		<a>
+			<span><%= update.date %> </span>
+			<p><%= update.text %></p>
+		</a>
+	</li>
+	<% }); %>
+</script>
