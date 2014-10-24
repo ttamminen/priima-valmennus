@@ -46,6 +46,11 @@ var ContactFormModule = (function ($) {
  
 	return {
 		init: function() {
+			if($context.length === 0)
+			{
+				return;
+			}
+
 			initForm();
 		}
 	};

@@ -32,9 +32,16 @@
 			load: ['/js/utils.js', '/js/vendor/lodash.compat.min.js', '/js/vendor/JSONP.js']
 		},
 		{
-			load: ['/js/contactform.js', '/js/news.js'],
+			test: document.getElementById('contact-form'),
+			load: '/js/contactform.js',
 			complete: function () {
 				ContactFormModule.init();
+			}
+		},
+		{
+			test: document.getElementsByClassName('social-media-updates'),
+			load: '/js/news.js',
+			complete: function () {
 				JSONP('http://priima-valmennus.apphb.com/api/facebook', 'callback', function (data) {
 					NewsModule.init(data);
 				});

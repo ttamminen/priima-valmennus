@@ -22,9 +22,9 @@ var NewsModule = (function (_) {
                       "Marraskuuta", 
                       "Joulukuuta" ],
 
-    };
+    };    
 
-    var updateTmpl = _.template(document.getElementById(defaults.tmplNewsUpdate).innerHTML);
+    var updateTmpl = null;
 
     function addUpdates(updates) {
         var updateInHtml = updateTmpl({ updates: updates});        
@@ -51,6 +51,13 @@ var NewsModule = (function (_) {
 
 	return {
         init: function (updates) {
+            var tmpl = document.getElementById(defaults.tmplNewsUpdate);
+            if(!tmpl) {
+                return;
+            }
+            
+            updateTmpl = _.template(tmpl.innerHTML);
+
             if(!defaults.target || defaults.target.length === 0) {
                 throw new Error("Could not find element to add social media updates.");
             }
