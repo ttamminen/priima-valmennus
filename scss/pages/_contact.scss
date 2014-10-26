@@ -30,11 +30,18 @@ $field-max-width: 410px;
 
 	h1 {
 		@include h2-smaller;
-	}
-
-	.tel-wrapper {
-		display: none;
 	}	
+}
+
+@media screen and (min-width: 40em) {
+	#contact-form {
+		width: 60%;
+		margin-right: 5%;
+	}
+}
+
+.tel-wrapper {
+	display: none;
 }
 
 .contact-method {
@@ -77,6 +84,13 @@ $field-max-width: 410px;
 		font-size: 32px;
 		color: $pv-dark-gray;
 		vertical-align: middle;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	#contact-info {
+		width: 30%;
+		border-top: 0;
 	}
 }
 

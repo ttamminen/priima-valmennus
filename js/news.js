@@ -5,7 +5,6 @@ var NewsModule = (function (_) {
     "use strict";
 
     var defaults = {
-        target: document.getElementsByClassName('social-media-updates')[0],
         tmplNewsUpdate: 'tmpl-news-update',
         maxUpdates: 3,
         textLength: 80,        
@@ -24,11 +23,12 @@ var NewsModule = (function (_) {
 
     };    
 
-    var updateTmpl = null;
+    var updateTmpl = null,
+        targetEl = null;
 
     function addUpdates(updates) {
         var updateInHtml = updateTmpl({ updates: updates});        
-        defaults.target.innerHTML = updateInHtml;
+        targetEl.innerHTML = updateInHtml;
     }
 
     function parseUpdate(update) {
@@ -50,17 +50,20 @@ var NewsModule = (function (_) {
     }
 
 	return {
-        init: function (updates) {
-            var tmpl = document.getElementById(defaults.tmplNewsUpdate);
-            if(!tmpl) {
+        init: function (updates, targetSelector) {
+            var target = document.querySelectorAll(targetSelector);
+            if(target.length === 0) {
                 return;
             }
             
-            updateTmpl = _.template(tmpl.innerHTML);
+            targetEl = target[0];
 
-            if(!defaults.target || defaults.target.length === 0) {
-                throw new Error("Could not find element to add social media updates.");
+            var tmpl = document.getElementById(defaults.tmplNewsUpdate);
+            if(!tmpl) {
+                throw new Error("Could not find template for rendering social media updates.");
             }
+
+            updateTmpl = _.template(tmpl.innerHTML);
             
             var limitedList = _.first(updates, defaults.maxUpdates);
             var parsedUpdates = _.map(limitedList, parseUpdate);

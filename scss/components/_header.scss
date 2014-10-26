@@ -1,7 +1,6 @@
 header.main {
 	@extend %group;
-	@extend %centered-content;
-	height: 180px;
+	@extend %centered-content;	
 	margin-bottom: 2em;
 	max-width: $content-max-width;
 	padding: 0 $content-padding;
@@ -38,6 +37,7 @@ header.main {
 
 @media screen and (min-width: 40em) {
 	header.main {
+		height: 180px;
 		margin-bottom: 0;
 		.logo {
 			> img {

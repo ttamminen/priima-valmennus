@@ -39,11 +39,15 @@
 			}
 		},
 		{
-			test: document.getElementsByClassName('social-media-updates'),
 			load: '/js/news.js',
 			complete: function () {
+				var socialmediaupdates = '.social-media-updates';
+				if(document.querySelectorAll(socialmediaupdates).length === 0) {
+					return;
+				}
+
 				JSONP('http://priima-valmennus.apphb.com/api/facebook', 'callback', function (data) {
-					NewsModule.init(data);
+					NewsModule.init(data, socialmediaupdates);
 				});
 			}
 		},
