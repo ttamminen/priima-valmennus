@@ -43,8 +43,17 @@ var TouchSliderModule = (function () {
 
 			var next = sliderEl.querySelectorAll('.js-slider-next');
 			var prev = sliderEl.querySelectorAll('.js-slider-prev');
-			next.addEventListener('click', next);
-			prev.addEventListener('click', prev);
+
+			if(!next || next.length === 0) {
+				throw new Error("Next button must be defined for the slider");
+			}
+
+			if(!prev || prev.length === 0) {
+				throw new Error("Prev button must be defined for the slider");
+			}
+
+			next[0].addEventListener('click', module.nextSlide);
+			prev[0].addEventListener('click', module.prevSlide);
 
 			var hammer = new Hammer(sliderEl);
 
