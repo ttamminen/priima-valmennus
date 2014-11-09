@@ -2,6 +2,24 @@
 // Picture element HTML5 shiv
 document.createElement( "picture" );
 </script>
+
+<script>
+	WebFontConfig = {
+		custom: {
+			families: ['Helvetica Neue']
+		}
+	};
+
+	(function() {
+		var wf = document.createElement('script');
+		wf.src = '/js/vendor/webfontloader.js';
+		wf.type = 'text/javascript';
+		wf.async = 'true';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(wf, s);
+	})();
+</script>
+
 <script src="js/vendor/picturefill.min.js" async></script>
 <script src="js/boot.js"></script>
 

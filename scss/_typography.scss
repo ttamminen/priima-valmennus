@@ -91,31 +91,47 @@ $body-font-family: $helvetica;
 
 @mixin h1 {
 	@include rem(font-size, $h1-size);
-	font-family: $header-font-family;
+	font-family: helvetica;
 	font-weight: 200;
 	color: $h1-color;
+
+	.wf-active & {
+		font-family: $header-font-family;
+	}
 }
 
 @mixin h2 {
 	@include rem(font-size, $h2-size);
-	font-family: $header-font-family;
+	font-family: helvetica;
 	font-weight: 200;
 	color: $h2-color;
+
+	.wf-active & {
+		font-family: $header-font-family;
+	}
 }
 
 @mixin h3 {
 	@include rem(font-size, $h3-size);
-	font-family: $header-font-family;
+	font-family: helvetica;
 	font-weight: 200;
 	color: $h3-color;
 	text-transform: uppercase;
+
+	.wf-active & {
+		font-family: $header-font-family;
+	}
 }
 
 @mixin h4 {
 	@include rem(font-size, $h4-size);
-	font-family: $header-font-family;
+	font-family: helvetica;
 	font-weight: 400;
 	color: $h4-color;
+
+	.wf-active & {
+		font-family: $header-font-family;
+	}
 }
 
 @mixin h5 {
@@ -202,4 +218,10 @@ h5 {
 
 .p2 {
 	@include p2;
+}
+
+.wf-inactive {
+	h1, h2, h3, h4 {
+		font-family: helvetica;
+	}
 }
