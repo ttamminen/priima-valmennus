@@ -1,5 +1,3 @@
-$field-max-width: 410px;
-
 .contact-nav {
 	text-align: center;
 
@@ -14,61 +12,7 @@ $field-max-width: 410px;
 	}
 }
 
-.firstname-wrapper, .email-wrapper, .tel-wrapper {
-	@extend .field-wrapper;
-	max-width: $field-max-width;
-}
-
-.contact-form {
-	@extend %full;	
-	float: left;
-	margin-bottom: 4em;
-
-	h1 {
-		@include h2-smaller;
-	}	
-}
-
-@media screen and (min-width: 40em) {
-	.contact-form {
-		width: 60%;
-		margin-right: 5%;
-	}
-}
-
-.tel-wrapper {
-	display: none;
-}
-
-.contact-method {
-	display: inline-block;
-	width: 100%;
-
-	label {
-		width: 210px;
-		border-radius: 3px;
-		border: 1px solid #D1D3D4;
-		margin-bottom: 10px;
-	}
-
-	> li {
-		float: left;
-		width: 100%;
-		margin-right: 0.5em;
-
-		label:first-child {
-			margin-top: 10px;
-		}
-	}
-
-	> li:last-child {
-		margin-right: 0;
-	}
-}
-
 .contact-info {
-	@extend %full;
-	float: right;
 	border-top: 1px solid $pv-gray;
 	padding-top: 2em;
 
@@ -85,10 +29,25 @@ $field-max-width: 410px;
 }
 
 @media screen and (min-width: 40em) {
-	.contact-info {
-		width: 30%;
+	.contact-info {		
 		border-top: 0;
 	}
+}
+
+
+.company-info { 
+	@extend %full;
+	float: left;
+}
+
+@media screen and (min-width: 40em) {
+	.company-info {
+		width: 30%;
+	}
+}
+
+.company-info-header {
+	@include h4;
 }
 
 .contact-header, .contact-person-name, .contact-person-title, .contact-person-email, .contact-person-tel {
@@ -120,21 +79,25 @@ $field-max-width: 410px;
 
 .social-media-icons {
 	@extend %plain-list;
+	margin: 0;
 
 	a {
 		text-decoration: none;
-		color: $pv-dark-gray;		
 	}
 
 	li {
 		margin-bottom: 1em;
+	}
+
+	li:last-child {
+		margin-bottom: 0;
 	}
 }
 
 .social-media-name {	
 	@include h4;
 	@include rem(font-size, 1.5em);	
-	color: $pv-dark-gray;
+	color: $pv-gray;
 	padding-left: 0.8em;
 	vertical-align: middle;
 }
