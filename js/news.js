@@ -6,7 +6,7 @@ var NewsModule = (function (_) {
 
     var defaults = {
         tmplNewsUpdate: 'tmpl-news-update',
-        maxUpdates: 3,
+        maxUpdates: 4,
         textLength: 80,        
         monthNames: [ "Tammikuuta", 
                       "Helmikuuta", 
@@ -45,7 +45,8 @@ var NewsModule = (function (_) {
 
         return {
             date: creationTime.getDate() + '. ' + defaults.monthNames[creationTime.getMonth()],
-            text: title
+            text: title,
+            uri: update.Uri
         };
     }
 

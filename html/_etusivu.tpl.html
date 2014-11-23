@@ -1,6 +1,6 @@
 <div class="frontpage-wrapper">
 	<div class="video">
-		<img src="images/etusivu_pääkuva.jpg" alt="temp video"/>
+		<img src="images/etusivu_pääkuva.jpg" alt="Personal trainer tapaaminen asiakkaan kanssa"/>
 	</div>
 	<section class="news">
 		<h1>Ajankohtaista</h1>
@@ -34,7 +34,7 @@
 <script type="text/template" id="tmpl-news-update">
 	<% _.forEach(updates, function(update) { %>
 	<li>
-		<a>
+		<a href="<%= update.uri %>">
 			<span><%= update.date %> </span>
 			<p><%= update.text %></p>
 		</a>

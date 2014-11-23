@@ -18,8 +18,16 @@
 	list-style: none;
 	padding: 0;
 
+	a {
+		text-decoration: none;
+	}
+
 	> li {
 		margin-bottom: 1em;
+
+		&:nth-child(4) {
+			display: none;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -91,6 +99,17 @@
 
 			&:last-child {
 				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width: 50em) {
+	.social-media-updates {
+		> li {
+			&:nth-child(4) {
+				display: inline-block;
 			}
 		}
 	}
