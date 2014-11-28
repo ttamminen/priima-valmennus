@@ -1,4 +1,4 @@
-var gulp = require('gulp'); 
+var gulp = require('gulp');
 
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
@@ -11,24 +11,18 @@ var fileinclude = require('gulp-file-include');
 var prefix = require('gulp-autoprefixer');
 
 // for the release
-var htmlmin = require('gulp-htmlmin'); 
+var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 var htmlreplace = require('gulp-html-replace');
 
-// for the clean
-var clean = require('gulp-clean');
+var del = require('del');
+var vinylPaths = require('vinyl-paths');
 
-var onError = function (err) {  
+var onError = function (err) {
     gutil.beep();
     console.log(err);
 };
-
-gulp.task('lint', function() {
-    return gulp.src('js/*.js')
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'));
-});
 
 gulp.task('sass', function() {
     return gulp.src('scss/*.scss')
@@ -40,16 +34,16 @@ gulp.task('sass', function() {
 
 gulp.task('scripts', function () {
     return gulp.src('js/**')
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'))
         .pipe(gulp.dest('dist/js'))
         .pipe(livereload());
 });
 
-// Concatenate & Minify JS
-gulp.task('scriptsmin', function() {
+gulp.task('scriptsmin', function () {
     return gulp.src('js/**')
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist/js'))
-        .pipe(rename('all.min.js'))
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter('jshint-stylish'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
@@ -60,12 +54,16 @@ gulp.task('html', function () {
             prefix: '@@',
             basepath: '@file'
         }))
-        .pipe(gulp.dest('dist'))        
+        .pipe(gulp.dest('dist'))
         .pipe(livereload());
 });
 
 gulp.task('htmlmin', function () {
     return gulp.src('html/*.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))    
         .pipe(htmlreplace({
             'css': 'css/styles.min.css',
             'js': 'js/all.min.js'
@@ -83,7 +81,7 @@ gulp.task('image', function () {
     return gulp.src('images/**')
         .pipe(imagemin({
             progressive: true,
-            svgoPlugins: [ 
+            svgoPlugins: [
             { moveGroupAttrsToElems: false },
             { convertPathData: false },
             { removeViewBox: false}
@@ -106,15 +104,10 @@ gulp.task('watch', ['server'], function() {
     gulp.watch('dist/**').on('change', function(file) {
         server.changed(file.path);
     });
-    gulp.watch('js/*.js', ['lint', 'scripts']);
+    gulp.watch('js/*.js', ['scripts']);
     gulp.watch('scss/**/*.scss', ['sass']);
-    gulp.watch('html/**/*.html', ['html', 'sass', 'lint', 'scripts']);
+    gulp.watch('html/**/*.html', ['html', 'sass', 'scripts']);
     gulp.watch('images/**', ['image']);
-});
-
-gulp.task('clean', function () {
-    return gulp.src('dist', {read: false})
-        .pipe(clean());
 });
 
 gulp.task('server', function (next) {
@@ -126,14 +119,14 @@ gulp.task('server', function (next) {
             // For non-existent files output the contents of /index.html page in order to make HTML5 routing work
             var urlPath = url.parse(req.url).pathname;
             if (urlPath === '/') {
-                req.url = '/dist/index.html';            
+                req.url = '/dist/index.html';
             } else if (urlPath === '/palvelut') {
                 req.url = '/dist/palvelut.html';
             } else if (urlPath === '/otayhteytta') {
                 req.url = '/dist/otayhteytta.html';
             } else if (urlPath === '/priimavalmennus') {
                 req.url = '/dist/priimavalmennus.html';
-            }            
+            }
             else if (
                 ['css', 'html', 'ico', 'less', 'js', 'png', 'txt', 'xml'].indexOf(urlPath.split('.').pop()) == -1 &&
                 ['bower_components', 'fonts', 'images', 'src', 'vendor', 'views'].indexOf(urlPath.split('/')[1]) == -1) {
@@ -149,9 +142,11 @@ gulp.task('server', function (next) {
         });
 });
 
-gulp.task('base', ['lint', 'sass', 'image', 'font', 'static']);
+gulp.task('base', ['sass', 'image', 'font']);
 
 // Default Task
-gulp.task('default', ['base', 'scripts', 'html', 'server', 'watch' ]);
+gulp.task('default', ['base', 'static', 'scripts', 'html', 'server', 'watch' ]);
 
-gulp.task('build', ['base', 'scriptsmin', 'htmlmin', 'image']);
+gulp.task('build', ['base', 'scripts', 'htmlmin']);
+
+gulp.task('run', ['server']);

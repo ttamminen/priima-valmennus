@@ -39,11 +39,11 @@ $body-font-family: $helvetica;
 
 @font-face {
     font-family: 'Helvetica Neue';
-    src: url('/fonts/eot/helveticaneueltstd-md.eot');
-    src: url('/fonts/eot/helveticaneueltstd-md.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/woff/helveticaneueltstd-md.woff') format('woff'),
-         url('/fonts/ttf/helveticaneueltstd-md.ttf') format('truetype'),
-         url('/fonts/svg/helveticaneueltstd-md.svg#HelveticaNeueLTStd65Medium') format('svg');
+    src: url('/fonts/eot/HelveticaNeueLTStd-Md.eot');
+    src: url('/fonts/eot/HelveticaNeueLTStd-Md.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/woff/HelveticaNeueLTStd-Md.woff') format('woff'),
+         url('/fonts/ttf/HelveticaNeueLTStd-Md.ttf') format('truetype'),
+         url('/fonts/svg/HelveticaNeueLTStd-Md.svg#HelveticaNeueLTStd65Medium') format('svg');
     font-style: normal;
     font-weight: 400;
 }

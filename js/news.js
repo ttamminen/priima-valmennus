@@ -56,7 +56,7 @@ var NewsModule = (function (_) {
             if(target.length === 0) {
                 return;
             }
-            
+
             targetEl = target[0];
 
             var tmpl = document.getElementById(defaults.tmplNewsUpdate);
