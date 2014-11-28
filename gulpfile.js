@@ -142,10 +142,10 @@ gulp.task('server', function (next) {
         });
 });
 
-gulp.task('base', ['sass', 'image', 'font']);
+gulp.task('base', ['sass', 'image', 'font', 'static']);
 
 // Default Task
-gulp.task('default', ['base', 'static', 'scripts', 'html', 'server', 'watch' ]);
+gulp.task('default', ['base', 'scripts', 'html', 'server', 'watch' ]);
 
 gulp.task('build', ['base', 'scripts', 'htmlmin']);
 
