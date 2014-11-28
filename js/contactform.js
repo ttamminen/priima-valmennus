@@ -1,7 +1,7 @@
 /* global _gaq, jQuery */
 /* exported ContactFormModule */
 
-var ContactFormModule = (function ($) {
+var ContactFormModule = (function ($, _gaq) {
 	"use strict";
  	var $context = $('#contact-form form');
 
@@ -55,4 +55,4 @@ var ContactFormModule = (function ($) {
 		}
 	};
  
-})(jQuery);
+})(jQuery, _gaq);
