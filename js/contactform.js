@@ -1,7 +1,7 @@
-/* global _gaq, jQuery */
+/* global ga, jQuery */
 /* exported ContactFormModule */
 
-var ContactFormModule = (function ($, _gaq) {
+var ContactFormModule = (function ($, ga) {
 	"use strict";
  	var $context = $('#contact-form form');
 
@@ -18,10 +18,10 @@ var ContactFormModule = (function ($, _gaq) {
 
 	var bindTrackingEvents = function () {
 		$context.find('input[type="submit"]').submit(function () {
-			_gaq.push(['_trackEvent', 'Yhteydenotto', 'Lähetä palaute']);
+			ga('send', 'event', 'button', 'click', 'submit');
 		});
 		$context.find('input').first().one('change', function () {
-			_gaq.push(['_trackEvent', 'Yhteydenotto', 'Aloitti viestin kirjoittamisen']);
+			ga('send', 'event', 'input', 'change', 'started writing');
 		});
 	};
 
@@ -55,4 +55,4 @@ var ContactFormModule = (function ($, _gaq) {
 		}
 	};
  
-})(jQuery, _gaq);
+})(jQuery, ga);

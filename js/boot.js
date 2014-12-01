@@ -1,8 +1,12 @@
 /* global Modernizr, responsiveNav, SliderModule, 
-		  TouchSliderModule, ContactFormModule, NewsModule, JSONP, _ */
+		  TouchSliderModule, ContactFormModule, NewsModule, ga,  JSONP, _ */
 
 (function () {
 	"use strict";
+
+	function trackNav() {
+		ga('send', 'event', 'button', 'click', 'navigation', this.text);
+	}
 
 	Modernizr.load([
 		{
@@ -13,11 +17,19 @@
 				}
 
 				var nav = document.getElementsByClassName('nav-collapse');
-				if(nav.length > 0) {
-					responsiveNav('.nav-collapse', {
-						label: '☰ Menu'
-					});
+				if(nav.length === 0) 
+				{
+					return;
 				}
+
+				var links = nav[0].querySelectorAll('a');
+				for(var i = 0 ; i < links.length - 1 ; i++) {
+					links[i].addEventListener('click', trackNav);
+				}
+
+				responsiveNav('.nav-collapse', {
+					label: '☰ Menu'
+				});
 			}
 		},
 		{
@@ -32,7 +44,7 @@
 			load: ['/js/utils.js', '/js/vendor/lodash.compat.min.js', '/js/vendor/JSONP.js']
 		},
 		{
-			test: document.getElementById('contact-form'),
+			test: document.getElementById('contact-form') !== null,
 			load: '/js/contactform.js',
 			complete: function () {
 				ContactFormModule.init();
