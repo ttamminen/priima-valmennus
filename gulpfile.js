@@ -15,6 +15,8 @@ var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 var htmlreplace = require('gulp-html-replace');
+var smoosher = require('gulp-smoosher');
+var minifyCSS = require('gulp-minify-css');
 
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
@@ -32,6 +34,14 @@ gulp.task('sass', function() {
         .pipe(livereload());
 });
 
+gulp.task('sassmin', function() {
+    return gulp.src('scss/*.scss')
+        .pipe(sass()).on('error', gutil.log)
+        .pipe(prefix("last 2 version", "> 1%", "ie 8"))
+        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task('scripts', function () {
     return gulp.src('js/**')
         .pipe(jshint('.jshintrc'))
@@ -41,9 +51,10 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('scriptsmin', function () {
-    return gulp.src('js/**')
+    return gulp.src(['js/bundled_vendor/*.js', 'js/*.js'])
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(concat('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
@@ -58,7 +69,7 @@ gulp.task('html', function () {
         .pipe(livereload());
 });
 
-gulp.task('htmlmin', function () {
+gulp.task('htmlmin', ['sassmin'], function () {
     return gulp.src('html/*.html')
         .pipe(fileinclude({
             prefix: '@@',
@@ -67,6 +78,9 @@ gulp.task('htmlmin', function () {
         .pipe(htmlreplace({
             'css': 'css/styles.min.css',
             'js': 'js/all.min.js'
+        }))
+        .pipe(smoosher({
+            base: 'dist'
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist'));
@@ -104,7 +118,7 @@ gulp.task('watch', ['server'], function() {
     gulp.watch('dist/**').on('change', function(file) {
         server.changed(file.path);
     });
-    gulp.watch('js/*.js', ['scripts']);
+    gulp.watch('js/**', ['scripts']);
     gulp.watch('scss/**/*.scss', ['sass']);
     gulp.watch('html/**/*.html', ['html', 'sass', 'scripts']);
     gulp.watch('images/**', ['image']);
@@ -112,7 +126,7 @@ gulp.task('watch', ['server'], function() {
 
 gulp.task('server', function (next) {
     var url = require('url'),
-        fileServer = require('ecstatic')({root: './', cache: 'no-cache', showDir: true}),
+        fileServer = require('ecstatic')({root: './', cache: 'no-cache', showDir: true, gzip: true }),
         port = 8000;
     require('http').createServer()
         .on('request', function (req, res) {
@@ -142,11 +156,9 @@ gulp.task('server', function (next) {
         });
 });
 
-gulp.task('base', ['sass', 'image', 'font', 'static']);
-
 // Default Task
-gulp.task('default', ['base', 'scripts', 'html', 'server', 'watch' ]);
+gulp.task('default', ['sass', 'image', 'font', 'static', 'scripts', 'html', 'server', 'watch' ]);
 
-gulp.task('build', ['base', 'scripts', 'htmlmin']);
+gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'htmlmin']);
 
 gulp.task('run', ['server']);
