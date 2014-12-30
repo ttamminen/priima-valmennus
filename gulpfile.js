@@ -15,8 +15,8 @@ var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 var pngcrush = require('imagemin-pngcrush');
 var htmlreplace = require('gulp-html-replace');
+var smoosher = require('gulp-smoosher');
 var minifyCSS = require('gulp-minify-css');
-var critical = require('critical');
 
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
@@ -59,11 +59,6 @@ gulp.task('scriptsmin', function () {
         .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('vendorscripts', function () {
-    return gulp.src('js/vendor/*.js')
-        .pipe(gulp.dest('dist/js/vendor/'));
-});
-
 gulp.task('html', function () {
     return gulp.src('html/*.html')
         .pipe(fileinclude({
@@ -83,6 +78,9 @@ gulp.task('htmlmin', ['sassmin'], function () {
         .pipe(htmlreplace({
             'css': 'css/styles.min.css',
             'js': 'js/all.min.js'
+        }))
+        .pipe(smoosher({
+            base: 'dist'
         }))
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist'));
@@ -107,95 +105,6 @@ gulp.task('image', function () {
             ]
         }))
         .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('copystyles', function () {
-    return gulp.src(['dist/css/main.css'])
-        .pipe(rename({
-            basename: 'site'
-        }))
-        .pipe(gulp.dest('dist/css'));
-});
-
-// Generate & Inline Critical-path CSS
-gulp.task('critical', ['build', 'copystyles'], function (cb) {
-
-    // At this point, we have our
-    // production styles in main/styles.css
-
-    // As we're going to overwrite this with
-    // our critical-path CSS let's create a copy
-    // of our site-wide styles so we can async
-    // load them in later. We do this with
-    // 'copystyles' above
-
-    critical.generate({
-        base: 'dist/',
-        src: 'index.html',
-        dest: 'css/frontpage.css',
-        width: 800,
-        height: 300,
-        minify: true,
-        extract: true
-    }, function(err, output){
-        critical.inline({
-            base: 'dist/',
-            src: 'index.html',
-            dest: 'index.html',
-            minify: true
-        });        
-    });
-
-    critical.generate({
-        base: 'dist/',
-        src: 'palvelut.html',
-        dest: 'css/services.css',
-        width: 800,
-        height: 300,
-        minify: true,
-        extract: true
-    }, function(err, output){
-        critical.inline({
-            base: 'dist/',
-            src: 'palvelut.html',
-            dest: 'palvelut.html',
-            minify: true
-        });        
-    });
-
-    critical.generate({
-        base: 'dist/',
-        src: 'priimavalmennus.html',
-        dest: 'css/priimavalmennus.css',
-        width: 800,
-        height: 300,
-        minify: true,
-        extract: true
-    }, function(err, output){
-        critical.inline({
-            base: 'dist/',
-            src: 'priimavalmennus.html',
-            dest: 'priimavalmennus.html',
-            minify: true
-        });        
-    });
-
-    critical.generate({
-        base: 'dist/',
-        src: 'otayhteytta.html',
-        dest: 'css/contact.css',
-        width: 800,
-        height: 300,
-        minify: true,
-        extract: true
-    }, function(err, output){
-        critical.inline({
-            base: 'dist/',
-            src: 'otayhteytta.html',
-            dest: 'otayhteytta.html',
-            minify: true
-        });        
-    });    
 });
 
 gulp.task('static', function () {
@@ -250,6 +159,6 @@ gulp.task('server', function (next) {
 // Default Task
 gulp.task('default', ['sass', 'image', 'font', 'static', 'scripts', 'html', 'server', 'watch' ]);
 
-gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'vendorscripts', 'htmlmin']);
+gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'htmlmin']);
 
 gulp.task('run', ['server']);
