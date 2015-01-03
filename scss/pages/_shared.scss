@@ -10,3 +10,17 @@
 		padding: 0 $content-padding;
 	}
 }
+
+.u-half-page {
+	float: left;
+	width: 100%;
+
+	@media screen and (min-width: 40em) {
+		width: (100% - 4%) / 2;
+		margin-right: 4%;
+	}
+}
+
+.u-half-page:last-of-type {
+	margin-right: 0;
+}

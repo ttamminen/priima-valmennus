@@ -1,0 +1,27 @@
+.personal-trainer-book {
+	.book-title {
+		@include h3;
+	}
+
+	.training-material {
+		float: left;
+		width: 100%;
+	}
+
+	.training-videos-title {
+		@include h4;	
+	}
+
+	.training-program {
+		@include h5;
+	}
+
+	.personal-trainer-book-cover {
+		max-width: 100%;
+	}
+
+	aside {
+		float: left;
+		width: 100%;
+	}
+}

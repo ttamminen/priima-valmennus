@@ -9,6 +9,7 @@ var livereload = require('gulp-livereload');
 var gutil = require('gulp-util');
 var fileinclude = require('gulp-file-include');
 var prefix = require('gulp-autoprefixer');
+var debug = require('gulp-debug');
 
 // for the release
 var htmlmin = require('gulp-htmlmin');
@@ -44,8 +45,9 @@ gulp.task('sassmin', function() {
 
 gulp.task('scripts', function () {
     return gulp.src('js/**')
+    	.pipe(debug())
         .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('jshint-stylish'))   
         .pipe(gulp.dest('dist/js'))
         .pipe(livereload());
 });
@@ -116,7 +118,7 @@ gulp.task('static', function () {
 gulp.task('watch', ['server'], function() {
     var server = livereload();
     gulp.watch('dist/**').on('change', function(file) {
-        server.changed(file.path);
+        //server.changed(file.path);
     });
     gulp.watch('js/**', ['scripts']);
     gulp.watch('scss/**/*.scss', ['sass']);
@@ -126,12 +128,12 @@ gulp.task('watch', ['server'], function() {
 
 gulp.task('server', function (next) {
     var url = require('url'),
-        fileServer = require('ecstatic')({root: './', cache: 'no-cache', showDir: true, gzip: true }),
+        fileServer = require('ecstatic')({root: './dist', cache: 'no-cache', showDir: true, gzip: true, defaultExt: true }),
         port = 8000;
     require('http').createServer()
         .on('request', function (req, res) {
             // For non-existent files output the contents of /index.html page in order to make HTML5 routing work
-            var urlPath = url.parse(req.url).pathname;
+            /*var urlPath = url.parse(req.url).pathname;
             if (urlPath === '/') {
                 req.url = '/dist/index.html';
             } else if (urlPath === '/palvelut') {
@@ -140,14 +142,16 @@ gulp.task('server', function (next) {
                 req.url = '/dist/otayhteytta.html';
             } else if (urlPath === '/priimavalmennus') {
                 req.url = '/dist/priimavalmennus.html';
-            }
+            } else if (urlPath === '/ptkirja') {
+                req.url = '/dist/ptkirja.html';
+            }            
             else if (
                 ['css', 'html', 'ico', 'less', 'js', 'png', 'txt', 'xml'].indexOf(urlPath.split('.').pop()) == -1 &&
                 ['bower_components', 'fonts', 'images', 'src', 'vendor', 'views'].indexOf(urlPath.split('/')[1]) == -1) {
                 req.url = '/dist/index.html';
             } else if (['src', 'bower_components'].indexOf(urlPath.split('/')[1]) == -1) {
                 req.url = '/dist' + req.url;
-            }
+            }*/
             fileServer(req, res);
         })
         .listen(port, function () {
