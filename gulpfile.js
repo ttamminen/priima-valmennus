@@ -103,7 +103,7 @@ gulp.task('image', function () {
             { removeViewBox: false}
             ],
             use: [
-                //pngcrush()
+                pngcrush()
             ]
         }))
         .pipe(gulp.dest('dist/images'));
@@ -131,38 +131,19 @@ gulp.task('server', function (next) {
         fileServer = require('ecstatic')({root: './dist', cache: 'no-cache', showDir: true, gzip: true, defaultExt: true }),
         port = 8000;
     require('http').createServer()
-        .on('request', function (req, res) {
-            // For non-existent files output the contents of /index.html page in order to make HTML5 routing work
-            /*var urlPath = url.parse(req.url).pathname;
-            if (urlPath === '/') {
-                req.url = '/dist/index.html';
-            } else if (urlPath === '/palvelut') {
-                req.url = '/dist/palvelut.html';
-            } else if (urlPath === '/otayhteytta') {
-                req.url = '/dist/otayhteytta.html';
-            } else if (urlPath === '/priimavalmennus') {
-                req.url = '/dist/priimavalmennus.html';
-            } else if (urlPath === '/ptkirja') {
-                req.url = '/dist/ptkirja.html';
-            }            
-            else if (
-                ['css', 'html', 'ico', 'less', 'js', 'png', 'txt', 'xml'].indexOf(urlPath.split('.').pop()) == -1 &&
-                ['bower_components', 'fonts', 'images', 'src', 'vendor', 'views'].indexOf(urlPath.split('/')[1]) == -1) {
-                req.url = '/dist/index.html';
-            } else if (['src', 'bower_components'].indexOf(urlPath.split('/')[1]) == -1) {
-                req.url = '/dist' + req.url;
-            }*/
-            fileServer(req, res);
-        })
         .listen(port, function () {
             gutil.log('Server is listening on ' + gutil.colors.magenta('http://localhost:' + port + '/'));
             next();
         });
 });
 
+gulp.task('cleandist', ['htmlmin'], function () {
+    del(['dist/*.tpl.html', 'dist/js/bundled_vendor']);
+});
+
 // Default Task
 gulp.task('default', ['sass', 'image', 'font', 'static', 'scripts', 'html', 'server', 'watch' ]);
 
-gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'htmlmin']);
+gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'htmlmin', 'cleandist']);
 
 gulp.task('run', ['server']);

@@ -31,8 +31,10 @@ $body-font-family: $helvetica;
 	font-family: 'Helvetica Neue';
 	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot');
 	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/woff2/HelveticaNeueLTStd-Th.woff2') format('woff2'),	     
 	     url('/fonts/woff/HelveticaNeueLTStd-Th.woff') format('woff'),
 	     url('/fonts/ttf/HelveticaNeueLTStd-Th.ttf')  format('truetype');
+
 	font-style: normal;
 	font-weight: 200;
 }
@@ -41,6 +43,7 @@ $body-font-family: $helvetica;
     font-family: 'Helvetica Neue';
     src: url('/fonts/eot/HelveticaNeueLTStd-Md.eot');
     src: url('/fonts/eot/HelveticaNeueLTStd-Md.eot?#iefix') format('embedded-opentype'),
+    	 url('/fonts/woff2/HelveticaNeueLTStd-Md.woff2') format('woff2'),
          url('/fonts/woff/HelveticaNeueLTStd-Md.woff') format('woff'),
          url('/fonts/ttf/HelveticaNeueLTStd-Md.ttf') format('truetype'),
          url('/fonts/svg/HelveticaNeueLTStd-Md.svg#HelveticaNeueLTStd65Medium') format('svg');
