@@ -17,7 +17,7 @@ var ContactFormModule = (function ($, ga) {
 	}	
 
 	var bindTrackingEvents = function () {
-		$context.find('input[type="submit"]').submit(function () {
+		$context.submit(function () {
 			ga('send', 'event', 'button', 'click', 'submit');
 		});
 		$context.find('input').first().one('change', function () {
