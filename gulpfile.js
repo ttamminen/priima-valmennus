@@ -131,6 +131,9 @@ gulp.task('server', function (next) {
         fileServer = require('ecstatic')({root: './dist', cache: 'no-cache', showDir: true, gzip: true, defaultExt: true }),
         port = 8000;
     require('http').createServer()
+        .on('request', function (req, res) {
+            fileServer(req, res);
+        })
         .listen(port, function () {
             gutil.log('Server is listening on ' + gutil.colors.magenta('http://localhost:' + port + '/'));
             next();
