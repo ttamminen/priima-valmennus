@@ -34,5 +34,19 @@ button {
 
 .submit {
 	@extend .button;
-	padding: 1em 2.6em;
+	background-color: $pv-pink;
+	color: $pv-white;
+	width: 100%;
+	font-size: 120%;
+
+	@media screen and (min-width: 30em) {
+		width: auto;
+		font-size: 150%;
+		padding: 1em 4.6em;
+	}
+
+	&:hover {
+		background-color: $pv-white;
+		color: $pv-pink;
+	}
 }

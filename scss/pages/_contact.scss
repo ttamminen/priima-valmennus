@@ -107,3 +107,7 @@
 	@include rem(font-size, 1.5em);	
 	color: $pv-darkish-gray;
 }
+
+.contact-wrapper .submit {
+	@extend %centered-content;
+}
