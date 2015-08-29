@@ -1,5 +1,5 @@
 /* global Modernizr, responsiveNav, SliderModule, 
-		  TouchSliderModule, ContactFormModule, NewsModule, ga,  JSONP, _ */
+		  TouchSliderModule, ContactFormModule, NewsModule, JSONP, _ */
 
 function ready(fn) {
 	"use strict";
