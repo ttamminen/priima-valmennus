@@ -16,10 +16,6 @@ function ready(fn) {
 function boot() {
 	"use strict";
 
-	function trackNav() {
-		ga('send', 'event', 'button', 'click', 'navigation', this.text);
-	}
-
 	function initNav() {
 		if(typeof responsiveNav === "undefined") {
 			throw new Error("Could not load responsive nav");
@@ -31,10 +27,6 @@ function boot() {
 			return;
 		}
 
-		var links = nav[0].querySelectorAll('a');
-		for(var i = 0 ; i < links.length - 1 ; i++) {
-			links[i].addEventListener('click', trackNav);
-		}
 
 		responsiveNav('.nav-collapse', {
 			label: '☰ Menu'

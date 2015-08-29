@@ -1,7 +1,7 @@
-/* global ga, jQuery */
+/* global jQuery */
 /* exported ContactFormModule */
 
-var ContactFormModule = (function ($, ga) {
+var ContactFormModule = (function ($) {
 	"use strict";
  	var $context = $('#contact-form form');
 
@@ -12,18 +12,7 @@ var ContactFormModule = (function ($, ga) {
 			$selection.on('change', onContactMethodChange);
 			$selection.first().trigger('change');
 		}
-
-		bindTrackingEvents();
 	}	
-
-	var bindTrackingEvents = function () {
-		$context.submit(function () {
-			ga('send', 'event', 'button', 'click', 'submit');
-		});
-		$context.find('input').first().one('change', function () {
-			ga('send', 'event', 'input', 'change', 'started writing');
-		});
-	};
 
 	var onContactMethodChange = function () {
 		var $tel = $context.find('.tel-wrapper');
@@ -55,4 +44,4 @@ var ContactFormModule = (function ($, ga) {
 		}
 	};
  
-})(jQuery, ga);
+})(jQuery);
