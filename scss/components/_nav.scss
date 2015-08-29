@@ -69,7 +69,7 @@ $nav-height: 180px;
 
 		ul {
 			> li {
-				@extend %group;
+				@include group;
 				width: 49%;
 				display: inline-block;
 

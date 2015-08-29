@@ -62,7 +62,7 @@ gulp.task('scriptsmin', function () {
 });
 
 gulp.task('html', function () {
-    return gulp.src('html/*.html')
+    return gulp.src(['html/**/*.html', '!templates'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
@@ -72,14 +72,14 @@ gulp.task('html', function () {
 });
 
 gulp.task('htmlmin', ['sassmin'], function () {
-    return gulp.src('html/*.html')
+    return gulp.src(['html/**/*.html', '!templates'])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'
         }))    
         .pipe(htmlreplace({
-            'css': 'css/styles.min.css',
-            'js': 'js/all.min.js'
+            'css': '/css/styles.min.css',
+            'js': '/js/all.min.js'
         }))
         .pipe(smoosher({
             base: 'dist'
