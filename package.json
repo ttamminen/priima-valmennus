@@ -2,6 +2,10 @@
   "name": "Priima-valmennus",
   "version": "0.0.0",
   "description": "Priima-valmennus web-site",
+  "engines": {
+    "node": ">=6.9.0 <7.0.0",
+    "npm": ">=3.10.0"
+  },
   "scripts": {
     "install": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
