@@ -2,13 +2,13 @@
   "name": "Priima-valmennus",
   "version": "0.0.0",
   "description": "Priima-valmennus web-site",
-  "main": "index.js",
   "scripts": {
+    "install": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tatu Tamminen / TripleT",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "del": "^1.1.1",
     "ecstatic": ">=0.5.8",
     "gulp": "^3.8.10",
