@@ -61,6 +61,12 @@ gulp.task('scriptsmin', function () {
         .pipe(gulp.dest('dist/js'));
 });
 
+// vendor scripts that are not bundled
+gulp.task('vendorscripts', function () {
+    return gulp.src(['js/vendor/*.js'])
+        .pipe(gulp.dest('dist/js/vendor'));
+});
+
 gulp.task('html', function () {
     return gulp.src(['html/**/*.html', '!templates'])
         .pipe(fileinclude({
@@ -147,6 +153,6 @@ gulp.task('cleandist', ['htmlmin'], function () {
 // Default Task
 gulp.task('default', ['sass', 'image', 'font', 'static', 'scripts', 'html', 'server', 'watch' ]);
 
-gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'htmlmin', 'cleandist']);
+gulp.task('build', ['sassmin', 'image', 'font', 'static', 'scriptsmin', 'vendorscripts', 'htmlmin', 'cleandist']);
 
 gulp.task('run', ['server']);
