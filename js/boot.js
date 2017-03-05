@@ -43,9 +43,9 @@ function boot() {
 			return;
 		}
 
-		JSONP('http://priima-valmennus.apphb.com/api/facebook', function (data) {
+		JSONP('http://priimavalmennus-socialmedia.azurewebsites.net/api/facebook', function (data) {
 			NewsModule.init(data, socialmediaupdates);
-		});		
+		});
 	}
 
 	function initSlider() {
