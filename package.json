@@ -1,6 +1,6 @@
 {
   "name": "Priima-valmennus",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Priima-valmennus web-site",
   "engines": {
     "node": ">=6.9.0 <7.0.0",
