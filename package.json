@@ -8,7 +8,7 @@
   },
   "scripts": {
     "install": "gulp build",
-    "start": "gulp",
+    "serve": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tatu Tamminen / TripleT",
