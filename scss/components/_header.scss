@@ -25,7 +25,7 @@ header.main {
 	}
 }
 
-@media screen and (min-width: 30em) and (max-width: 40em) {
+@media screen and (min-width: 30em) and (max-width: 45em) {
 	header.main {
 		.logo {
 			> img {
@@ -35,7 +35,7 @@ header.main {
 	}
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 45em) {
 	header.main {
 		height: 180px;
 		margin-bottom: 0;

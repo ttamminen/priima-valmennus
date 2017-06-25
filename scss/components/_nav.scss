@@ -26,6 +26,8 @@ $nav-height: 180px;
 	ul > li {
 		> a {
 			@include nav-text;
+			transition: background-color 0.5s, color 0.5s;
+
 			font-size: 1.5em;
 			line-height: 2em;
 			font-weight: 200;		
@@ -45,11 +47,10 @@ $nav-height: 180px;
 			}
 		}
 
-		&:hover {
+		&:hover, &.current-link {
 			> a {
-				transition: background-color 0.5s,
-							color 0.5s;
-				background-color: lighten($pv-pink, 20%);
+				background-color: $pv-pink;
+				color: white;
 			}
 		}
 	}
@@ -63,9 +64,9 @@ $nav-height: 180px;
 	}
 }
 
-@media screen and (min-width: 30em) and (max-width: 40em) {
+@media screen and (min-width: 30em) and (max-width: 45em) {
 	.nav-collapse {
-		max-height: 125px !important;
+		max-height: 152px !important;
 
 		ul {
 			> li {
@@ -85,7 +86,7 @@ $nav-height: 180px;
 	}
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 45em) {
 	.nav-collapse {
 		float: right;
 		height: $nav-height;
@@ -111,7 +112,7 @@ $nav-height: 180px;
 				}
 			}
 
-			&:hover {
+			&:hover, &.current-link {
 				> a {
 					background-color: $pv-dark-gray;
 					color: $pv-white;
@@ -121,7 +122,7 @@ $nav-height: 180px;
 	}
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 60em) {
 	.nav-collapse {
 		ul > li {
 			width: 140px;
