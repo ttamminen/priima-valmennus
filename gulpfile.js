@@ -57,7 +57,10 @@ gulp.task('scriptsmin', function () {
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(concat('all.min.js'))
-        .pipe(uglify())
+        .pipe(uglify().on('error', function(err) {
+            gutil.log(gutil.colors.red('[Error]'), err.toString());
+            this.emit('end');
+        }))
         .pipe(gulp.dest('dist/js'));
 });
 
