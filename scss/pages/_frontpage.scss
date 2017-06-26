@@ -3,16 +3,6 @@
 	max-width: $content-max-width;
 	padding: 0 $content-padding;
 
-	.product-highlight {
-		.text-wrapper {
-			text-align: center;
-
-			h1, p {
-				text-align: left;
-			}			
-		}
-	}
-
 	.video {
 		img {
 			width: 100%;

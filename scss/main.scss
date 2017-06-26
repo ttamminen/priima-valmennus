@@ -9,6 +9,7 @@
 @import "typography";
 @import "icons";
 @import "feature-detection";
+@import "device";
 
 @import "components/form";
 @import "components/buttons";
@@ -88,15 +89,5 @@ img[src*=".svg"] {
 @media screen and (min-width:0\0) {
 	img[src*=".svg"] {
 		width: 100%;
-	}
-}
-
-.tablet-and-bigger {
-	display: none;
-}
-
-@media screen and (min-width: 40em) {
-	.tablet-and-bigger {
-		display: inline-block;
 	}
 }
