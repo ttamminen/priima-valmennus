@@ -25,18 +25,18 @@ $round-info-area-diameter: 100px;
 
 .price {
 	@include circle($round-info-area-diameter);
+	display: flex;
+	align-items: center;
 	background: $pv-pink;
-	padding-top: 5px;
+	text-align: center;
+}
 
-	> span {
-		@include price-info-area-text;			
-		display: inline-block;
-		text-align: center;
-		width: 100%;
-		vertical-align: middle;
-	}
+.price-text {
+	@include price-info-area-text;			
+	flex: 1;
+}
 
-	> span:first-child, > span:last-child {
-		font-size: 70%;
-	}		
+.price-text-small {
+	@include p2;
+	color: white;
 }

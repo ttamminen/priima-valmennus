@@ -1,5 +1,6 @@
 .product-highlight {
 	@extend %group;
+	margin-bottom: 40px;
 
 	h1 {
 		@include h4;
@@ -16,6 +17,8 @@
 
 @media screen and (min-width: 45em) {
 	.product-highlight {
+		margin-bottom: 0;
+
 		.text-wrapper {
 			float: left;
 			width: 45%;
@@ -39,19 +42,12 @@
 @media screen and (min-width: 40em) and (max-width: 50em) {
 	.product-highlight {
 		h1 {
-			margin: 0.2em 0 0 0;
 			font-size: $h4-size * 0.8;
 		}
 
 		p {
 			margin: 0.5em 0;
 		}
-	}
-}
-
-@media screen and (max-width: 40em) {
-	.product-highlight {
-		margin-bottom: 40px;
 	}
 }
 
