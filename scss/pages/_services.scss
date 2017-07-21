@@ -22,6 +22,23 @@
 	}
 }
 
+.service-reserve-time-fixed {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 40em) {
+	.service-reserve-time-fixed {
+		left: 20vw;
+    right: 20vw;
+    bottom: 1rem;
+	}
+}
+
 .service-divider {
 	display: none;
 }
@@ -68,8 +85,4 @@
 		float: left;
 		width: 50%;
 	}
-}
-
-.service-reserve-time {
-	margin-bottom: 2em;
 }

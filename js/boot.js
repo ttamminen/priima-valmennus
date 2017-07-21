@@ -1,5 +1,5 @@
 /* global Modernizr, responsiveNav, SliderModule, 
-      TouchSliderModule, ContactFormModule, NewsModule, JSONP, _ */
+      TouchSliderModule, ContactFormModule, ScrollModule, NewsModule, JSONP, _ */
 
 function ready(fn) {
   "use strict";
@@ -64,11 +64,16 @@ function boot() {
     }
   }
 
+  function initScroll() {
+    ScrollModule.init()
+  }
+
   function init() {
     initNav();
     initNews();
     initContactForm();		
     initSlider();
+    initScroll();
   }
 
   init();
