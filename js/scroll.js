@@ -27,27 +27,17 @@ var ScrollModule = (function (_) {
         };
     }
 
-    function getElementOffset(element)
-    {
-        var de = document.documentElement;
-        var box = element.getBoundingClientRect();
-        var top = box.top + window.pageYOffset - de.clientTop;
-        var left = box.left + window.pageXOffset - de.clientLeft;
-        return { top: top, left: left };
-    }
-
 	return {
         init: function () {
             var reserve = document.getElementById('reserve-time-button');
             if(!reserve) {
                 return;
             }
-            var elementOffset = getElementOffset(reserve)
             window.onscroll = throttle(function() {
-                if ((window.innerHeight + window.pageYOffset) > elementOffset.top) {
-                    reserve.classList.add('service-reserve-time-fixed');
+                if (window.pageYOffset > 400) {
+                    reserve.classList.add('service-reserve-time-visible');
                 } else {
-                    reserve.classList.remove('service-reserve-time-fixed');
+                    reserve.classList.remove('service-reserve-time-visible');
                 }
             }, 100)
     	}
