@@ -1,10 +1,20 @@
-﻿.testimonial {
+﻿.testimonials {
+	display: flex;
+}
+
+.testimonial {
 	position: relative;
 	font-style: italic;
 	background-color: lighten($pv-blue, 10%);
 	padding: 1em;
 	margin: 0;
 	border-radius: 1em;
+	margin-right: 2rem;
+	flex: 1;
+}
+
+.testimonial:last-child {
+	margin-right: 0;
 }
 
 .testimonial-text {

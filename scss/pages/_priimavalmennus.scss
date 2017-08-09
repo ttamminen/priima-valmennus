@@ -33,5 +33,11 @@
 
 .instructor-image {
 	@extend %centered-content;
+	display: block;
 	max-width: 100%;
+}
+
+.priima-valmennus-booking-section {
+	text-align: center;
+	margin-bottom: 4em;
 }
