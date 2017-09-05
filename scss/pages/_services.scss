@@ -51,23 +51,7 @@
 	height: 100px;
 }
 
-.service-divider {
-	display: none;
-}
-
-.service-content {
-	@extend .list-two-cols;
-
-	> li {
-		@extend .list-two-cols-item;
-	}
-}
-
 @media screen and (min-width: 40em) {
-	.service-divider {
-		display: inline-block;
-	}
-
 	.service {
 		.introduction {
 			padding-left: 2em;
@@ -97,4 +81,11 @@
 		float: left;
 		width: 50%;
 	}
+}
+
+.service-reserve {
+	margin-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	display: flex;
 }
