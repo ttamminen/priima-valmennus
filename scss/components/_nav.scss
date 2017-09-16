@@ -7,7 +7,6 @@ $nav-height: 180px;
 	margin-right: auto;
 	width: 100px;
 	text-align: center;
-	display: block;
 }
 
 .nav-toggle.active {
@@ -23,34 +22,39 @@ $nav-height: 180px;
 .nav-collapse {
 	@extend %group;
 
-	ul > li {
-		> a {
-			@include nav-text;
-			transition: background-color 0.5s, color 0.5s;
+	ul {
+		@include group;
 
-			font-size: 1.5em;
-			line-height: 2em;
-			font-weight: 200;		
-			text-decoration: none;
-			text-align: center;
-
-			color: $pv-pink;
-			border: 2px solid $pv-pink;
-			border-bottom: 0;
-			display: block;
-		}
-
-		&.active {
+		> li {
 			> a {
-				background-color: $pv-dark-gray;
+				@include nav-text;
+				transition: background-color 0.5s, color 0.5s;
+
+				font-size: 1.5em;
+				line-height: 2em;
+				font-weight: 200;		
+				text-decoration: none;
+				text-align: center;
 				color: $pv-pink;
+				
+				border: 2px solid $pv-pink;
+				border-bottom: 0;
+				display: block;
 			}
-		}
 
-		&:hover, &.current-link {
-			> a {
+			&.active {
+				background-color: $pv-dark-gray;
+				> a {
+					color: $pv-pink;
+				}
+			}
+
+			&:hover, &.current-link {
 				background-color: $pv-pink;
-				color: white;
+
+				> a {
+					color: white;
+				}
 			}
 		}
 	}
@@ -64,7 +68,7 @@ $nav-height: 180px;
 	}
 }
 
-@media screen and (min-width: 30em) and (max-width: 45em) {
+@media screen and (min-width: 30em) and (max-width: 50em) {
 	.nav-collapse {
 		max-height: 152px !important;
 
@@ -86,39 +90,52 @@ $nav-height: 180px;
 	}
 }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 50em) {
 	.nav-collapse {
 		float: right;
 		height: $nav-height;
+		width: calc(100% - 222px);
 
-		ul > li {
-			width: auto;
-			float: left;
-			border: none;
+		> ul {
+			height: 100%;
+			display: flex !important;
 
-			> a {
-				@include nav-text;
-				line-height: $nav-height;
-				
-				padding: 0 10px;
-				height: auto;
-
+			> li {
+				width: auto;
+				float: left;
+				border: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 				background-color: $pv-white;
-				color: $pv-dark-gray;
-				border: 0;
+				display: flex;
+				align-items: center;
 
-				&:after {
-					content: "";
-				}
-			}
-
-			&:hover, &.current-link {
 				> a {
-					background-color: $pv-dark-gray;
-					color: $pv-white;
+					@include nav-text;
+					
+					color: $pv-dark-gray;
+					padding: 0 10px;
+					height: 100%;
+					display: flex;
+					align-items: center;
+	
+					border: 0;
+	
+					&:after {
+						content: "";
+					}
 				}
-			}
-		}
+	
+				&:hover, &.current-link {
+					background-color: $pv-dark-gray;
+
+					> a {
+						color: $pv-white;
+					}
+				}
+			}			
+		} 
 	}
 }
 
@@ -126,14 +143,6 @@ $nav-height: 180px;
 	.nav-collapse {
 		ul > li {
 			width: 120px;
-		}
-	}
-}
-
-@media screen and (min-width: 60em) {
-	.nav-collapse {
-		ul > li {
-			width: 140px;
 		}
 	}
 }
