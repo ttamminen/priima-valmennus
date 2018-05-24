@@ -1,53 +1,64 @@
 $field-max-width: 410px;
 
 .contact-form {
-	@extend %full;
-	float: left;
-	margin-bottom: 4em;
+  @extend %full;
+  float: left;
+  margin-bottom: 4em;
 
-	h1 {
-		@include h2-smaller;
-	}	
+  h1 {
+    @include h2-smaller;
+  }
+}
+
+.contact-form-submit {
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 40em) {
-	.contact-form {
-		width: 60%;
-		margin-right: 5%;
-	}
+  .contact-form {
+    width: 60%;
+    margin-right: 5%;
+  }
 }
 
-.firstname-wrapper, .email-wrapper, .tel-wrapper {
-	@extend .field-wrapper;
-	max-width: $field-max-width;
+.firstname-wrapper,
+.email-wrapper,
+.tel-wrapper,
+.opt-in-for-email-wrapper {
+  @extend .field-wrapper;
+  max-width: $field-max-width;
+}
+
+.opt-in-for-email-wrapper {
+  margin-bottom: 2rem;
 }
 
 .tel-wrapper {
-	display: none;
+  display: none;
 }
 
 .contact-method {
-	display: inline-block;
-	@extend %full;
+  display: inline-block;
+  @extend %full;
 
-	label {
-		width: 210px;
-		border-radius: 3px;
-		border: 1px solid #D1D3D4;
-		margin-bottom: 10px;
-	}
+  label {
+    width: 210px;
+    border-radius: 3px;
+    border: 1px solid #d1d3d4;
+    margin-bottom: 10px;
+  }
 
-	> li {
-		float: left;
-		width: 100%;
-		margin-right: 0.5em;
+  > li {
+    float: left;
+    width: 100%;
+    margin-right: 0.5em;
 
-		label:first-child {
-			margin-top: 10px;
-		}
-	}
+    label:first-child {
+      margin-top: 10px;
+    }
+  }
 
-	> li:last-child {
-		margin-right: 0;
-	}
+  > li:last-child {
+    margin-right: 0;
+  }
 }
