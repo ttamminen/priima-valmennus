@@ -21,211 +21,222 @@ $price-info-area-font-size: 1em;
 $footer-caption-text-size: 1.625em;
 $footer-text-size: 1.125em;
 
-$helvetica-neue: 'Helvetica Neue', helvetica, arial;
+$helvetica-neue: "Helvetica Neue", helvetica, arial;
 $helvetica: helvetica, arial;
 
 $header-font-family: $helvetica-neue;
 $body-font-family: $helvetica;
 
 @font-face {
-	font-family: 'Helvetica Neue';
-	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot');
-	src: url('/fonts/eot/HelveticaNeueLTStd-Th.eot?#iefix') format('embedded-opentype'),
-		 url('/fonts/woff2/HelveticaNeueLTStd-Th.woff2') format('woff2'),	     
-			 url('/fonts/woff/HelveticaNeueLTStd-Th.woff') format('woff'),
-			 url('/fonts/ttf/HelveticaNeueLTStd-Th.ttf')  format('truetype');
+  font-family: "Helvetica Neue";
+  src: url("/fonts/eot/HelveticaNeueLTStd-Th.eot");
+  src: url("/fonts/eot/HelveticaNeueLTStd-Th.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/woff2/HelveticaNeueLTStd-Th.woff2") format("woff2"),
+    url("/fonts/woff/HelveticaNeueLTStd-Th.woff") format("woff"),
+    url("/fonts/ttf/HelveticaNeueLTStd-Th.ttf") format("truetype");
 
-	font-style: normal;
-	font-weight: 200;
+  font-style: normal;
+  font-weight: 200;
 }
 
 @font-face {
-		font-family: 'Helvetica Neue';
-		src: url('/fonts/eot/HelveticaNeueLTStd-Md.eot');
-		src: url('/fonts/eot/HelveticaNeueLTStd-Md.eot?#iefix') format('embedded-opentype'),
-			 url('/fonts/woff2/HelveticaNeueLTStd-Md.woff2') format('woff2'),
-				 url('/fonts/woff/HelveticaNeueLTStd-Md.woff') format('woff'),
-				 url('/fonts/ttf/HelveticaNeueLTStd-Md.ttf') format('truetype'),
-				 url('/fonts/svg/HelveticaNeueLTStd-Md.svg#HelveticaNeueLTStd65Medium') format('svg');
-		font-style: normal;
-		font-weight: 400;
+  font-family: "Helvetica Neue";
+  src: url("/fonts/eot/HelveticaNeueLTStd-Md.eot");
+  src: url("/fonts/eot/HelveticaNeueLTStd-Md.eot?#iefix")
+      format("embedded-opentype"),
+    url("/fonts/woff2/HelveticaNeueLTStd-Md.woff2") format("woff2"),
+    url("/fonts/woff/HelveticaNeueLTStd-Md.woff") format("woff"),
+    url("/fonts/ttf/HelveticaNeueLTStd-Md.ttf") format("truetype"),
+    url("/fonts/svg/HelveticaNeueLTStd-Md.svg#HelveticaNeueLTStd65Medium")
+      format("svg");
+  font-style: normal;
+  font-weight: 400;
 }
 
 @font-face {
-	font-family: 'icomoon';
-	src:  url('/fonts/eot/icomoon.eot?9edul1');
-	src:  url('/fonts/eot/icomoon.eot?9edul1#iefix') format('embedded-opentype'),
-		url('/fonts/ttf/icomoon.ttf?9edul1') format('truetype'),
-		url('/fonts/woff/icomoon.woff?9edul1') format('woff'),
-		url('/fonts/svg/icomoon.svg?9edul1#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "icomoon";
+  src: url("/fonts/eot/icomoon.eot?9edul1");
+  src: url("/fonts/eot/icomoon.eot?9edul1#iefix") format("embedded-opentype"),
+    url("/fonts/ttf/icomoon.ttf?9edul1") format("truetype"),
+    url("/fonts/woff/icomoon.woff?9edul1") format("woff"),
+    url("/fonts/svg/icomoon.svg?9edul1#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'icomoon' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-check-rounded:before {
-	content: "\e900";
+  content: "\e900";
 }
 .icon-facebook:before {
-	content: "\ea91";
+  content: "\ea91";
 }
 .icon-instagram:before {
-	content: "\ea92";
+  content: "\ea92";
 }
 .icon-blogger:before {
-	content: "\eab8";
+  content: "\eab8";
 }
 .icon-valid:before {
-	content: "\f00c";
+  content: "\f00c";
 }
 
 @mixin h1 {
-	@include rem(font-size, $h1-size);
-	font-family: helvetica;
-	font-weight: 200;
-	color: $h1-color;
+  @include rem(font-size, $h1-size);
+  font-family: helvetica;
+  font-weight: 200;
+  color: $h1-color;
 
-	.wf-active & {
-		font-family: $header-font-family;
-	}
+  .wf-active & {
+    font-family: $header-font-family;
+  }
 }
 
 @mixin h2 {
-	@include rem(font-size, $h2-size);
-	font-family: helvetica;
-	font-weight: 200;
-	color: $h2-color;
+  @include rem(font-size, $h2-size);
+  font-family: helvetica;
+  font-weight: 200;
+  color: $h2-color;
 
-	.wf-active & {
-		font-family: $header-font-family;
-	}
+  .wf-active & {
+    font-family: $header-font-family;
+  }
 }
 
 @mixin h3 {
-	@include rem(font-size, $h3-size);
-	font-family: helvetica;
-	font-weight: 200;
-	color: $h3-color;
-	text-transform: uppercase;
+  @include rem(font-size, $h3-size);
+  font-family: helvetica;
+  font-weight: 200;
+  color: $h3-color;
+  text-transform: uppercase;
 
-	.wf-active & {
-		font-family: $header-font-family;
-	}
+  .wf-active & {
+    font-family: $header-font-family;
+  }
 }
 
 @mixin h4 {
-	@include rem(font-size, $h4-size);
-	font-family: helvetica;
-	font-weight: 400;
-	color: $h4-color;
+  @include rem(font-size, $h4-size);
+  font-family: helvetica;
+  font-weight: 400;
+  color: $h4-color;
 
-	.wf-active & {
-		font-family: $header-font-family;
-	}
+  .wf-active & {
+    font-family: $header-font-family;
+  }
 }
 
 @mixin h5 {
-	@include rem(font-size, $h5-size);
-	font-family: helvetica, arial;
-	font-weight: 400;
-	color: $h5-color;
+  @include rem(font-size, $h5-size);
+  font-family: helvetica, arial;
+  font-weight: 400;
+  color: $h5-color;
 }
 
 @mixin p1 {
-	@include rem(font-size, $p1-size);
-	font-family: helvetica, arial;
-	font-weight: 400;
-	color: $p1-color;
+  @include rem(font-size, $p1-size);
+  font-family: helvetica, arial;
+  font-weight: 400;
+  color: $p1-color;
 }
 
 @mixin p2 {
-	@include rem(font-size, $p2-size);
-	font-family: helvetica, arial;
-	font-weight: 400;
-	color: $p2-color;
+  @include rem(font-size, $p2-size);
+  font-family: helvetica, arial;
+  font-weight: 400;
+  color: $p2-color;
 }
 
 @mixin nav-text {
-	@include rem(font-size, $nav-text-size);
-	font-family: $helvetica-neue;
-	font-weight: 400;
+  @include rem(font-size, $nav-text-size);
+  font-family: $helvetica-neue;
+  font-weight: 400;
 }
 
 @mixin footer-caption-text {
-	@include rem(font-size, $footer-caption-text-size);
-	font-family: $helvetica-neue;
-	font-weight: 200;
-	color: $pv-pink;
+  @include rem(font-size, $footer-caption-text-size);
+  font-family: $helvetica-neue;
+  font-weight: 200;
+  color: $pv-pink;
 }
 
 @mixin footer-text {
-	@include rem(font-size, $footer-text-size);
-	font-family: $helvetica-neue;
-	font-weight: 200;
+  @include rem(font-size, $footer-text-size);
+  font-family: $helvetica-neue;
+  font-weight: 200;
 }
 
 @mixin price-info-area-text {
-	@include rem(font-size, $price-info-area-font-size);
-	color: $pv-white;
+  @include rem(font-size, $price-info-area-font-size);
+  color: $pv-white;
 }
 
 @mixin h2-smaller {
-	@include rem(font-size, 2.125em);
-	font-family: $helvetica-neue;
-	color: $pv-pink;
-	font-weight: 200;
-	text-transform: uppercase;
+  @include rem(font-size, 2.125em);
+  font-family: $helvetica-neue;
+  color: $pv-pink;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 
 $base-font-size: 16px;
 @function em($px, $base: $base-font-size) {
-		@return ($px / $base) * 1em;
+  @return ($px / $base) * 1em;
 }
 
 h1 {
-	@include h1;
+  @include h1;
 }
 
 h2 {
-	@include h2;
+  @include h2;
 }
 
 h3 {
-	@include h3;
+  @include h3;
 }
 
 h4 {
-	@include h4;
+  @include h4;
 }
 
 h5 {
-	@include h5;
+  @include h5;
 }
 
 .p1 {
-	@include p1;
+  @include p1;
 }
 
 .p2 {
-	@include p2;
+  @include p2;
 }
 
 .wf-inactive {
-	h1, h2, h3, h4 {
-		font-family: helvetica;
-	}
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: helvetica;
+  }
+}
+
+.legal-text-header {
+  color: $text-color;
 }

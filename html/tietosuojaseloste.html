@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+		@@include('./templates/_head.tpl.html', {
+			"title": "Tietosuojaseloste | Priima-valmennus",
+			"description": "Priima-valmennus on Personal Trainer ja lajivalmennus palveluita tarjoava yritys. Toimimme mm. Kerava, Tuusula, Järvenpää, Vantaa, Sipoo.",
+			"url": "http://www.priimavalmennus.fi/tietosuojaseloste"
+		})
+	</head>
+	<body>
+		@@include('./templates/_body.tpl.html')
+		<div class="page-wrap">
+			@@include('./templates/_header.tpl.html')
+			<div class="content-wrap">
+				@@include('./_tietosuojaseloste.tpl.html')
+			</div>
+		</div>
+		@@include('./templates/_footer.tpl.html')
+
+		@@include('./templates/_scripts.tpl.html')
+	</body>
+</html>
