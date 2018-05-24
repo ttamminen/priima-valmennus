@@ -1,69 +1,74 @@
 @mixin group() {
-	zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 
-	&:before, &:after {
-	    content: "";
-	    display: table;
-	}
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
 
-	&:after {
-		clear: both;
-	}	
+  &:after {
+    clear: both;
+  }
 }
 
 %group {
-	@include group;
+  @include group;
 }
 
 @mixin circle($diameter) {
-	border-radius: 50%;
-	width: $diameter;
-	height: $diameter;
+  border-radius: 50%;
+  width: $diameter;
+  height: $diameter;
 }
 
 @mixin thirds($margin: 1%) {
-	width: ((100% - $margin * 2) / 3);
-	margin-right: $margin;
+  width: ((100% - $margin * 2) / 3);
+  margin-right: $margin;
 
-	&:last-of-type {
-		margin-right: 0;
-	}
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 %plain-list {
-	list-style: none;
-	padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 %full {
-	width: 100%;
+  width: 100%;
 }
 
 %half {
-	width: 50%;
+  width: 50%;
 }
 
 .u-centered-text {
-	text-align: center;
+  text-align: center;
 }
 
-%centered-content {	
-	margin-left: auto;
-	margin-right: auto;
+.u-text-align-left {
+  text-align: left;
+}
+
+%centered-content {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .u-centered-content {
-	@extend %centered-content;
+  @extend %centered-content;
 }
 
 .mb-1 {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mb-2 {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .d-block {
-	display: block;
+  display: block;
 }
