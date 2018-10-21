@@ -1,9 +1,9 @@
 {
-  "name": "Priima-valmennus",
+  "name": "priima-valmennus",
   "version": "1.0.0",
   "description": "Priima-valmennus web-site",
   "engines": {
-    "node": "4.6.1",
+    "node": "8.11.x",
     "npm": ">=4.0.0"
   },
   "scripts": {
