@@ -203,8 +203,9 @@ gulp.task(
 
 gulp.task(
   "cleandist",
-  gulp.series(["htmlmin"], function() {
+  gulp.series(["htmlmin"], function(done) {
     del(["dist/*.tpl.html", "dist/js/bundled_vendor"]);
+    done();
   })
 );
 
