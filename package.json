@@ -2,10 +2,6 @@
   "name": "priima-valmennus",
   "version": "1.0.0",
   "description": "Priima-valmennus web-site",
-  "engines": {
-    "node": "8.11.x",
-    "npm": ">=4.0.0"
-  },
   "scripts": {
     "install": "gulp build",
     "serve": "gulp",
